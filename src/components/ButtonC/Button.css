@@ -1,0 +1,15 @@
+.boton-azul a {
+    display: inline-block; /* Para que el link se comporte como botón */
+    color: white; /* Texto blanco */
+    background-color: #000080; /* Fondo azul */
+    padding: 10px 30px; /* Espaciado interno para darle tamaño */
+    border-radius: 18px; /* Bordes redondeados */
+    text-decoration: none; /* Quitar el subrayado del enlace */
+    font-size: 1.5em; /* Tamaño de la letra */
+    transition: background-color 0.3s ease; /* Animación suave al cambiar de color */
+    background-color: #000080;
+}
+
+.boton-azul a:hover {
+    background-color: #0000cc; /* Un azul más claro al pasar el mouse */
+}

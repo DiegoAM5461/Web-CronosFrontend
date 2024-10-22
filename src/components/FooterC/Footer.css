@@ -1,0 +1,170 @@
+ul {
+  list-style: none;
+}
+footer {
+  background-color: #000000;
+  color: #ecf0f1;
+  padding: 40px 0;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+footer h2,
+footer h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+footer p,
+footer a {
+  color: #ecf0f1;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+footer .text-justify {
+  text-align: justify;
+}
+
+footer .follow_us ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer .follow_us ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+footer .follow_us ul li a {
+  color: #ecf0f1;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer .follow_us ul li a:hover {
+  color: #3498db;
+}
+
+footer .links ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer .links ul li {
+  margin-bottom: 10px;
+}
+
+footer .links ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer .links ul li a:hover {
+  color: #3498db;
+}
+
+footer .contacts ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer .contacts ul li {
+  margin-bottom: 10px;
+}
+
+footer .contacts ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer .contacts ul li a:hover {
+  color: #3498db;
+}
+
+footer .contacts ul li i {
+  margin-right: 10px;
+}
+
+footer hr {
+  border-top: 1px solid #34495e;
+  margin: 40px 0;
+}
+
+footer .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer .col-lg-5,
+footer .col-lg-3,
+footer .col-md-6,
+footer .col-md-4 {
+  flex: 1;
+  padding: 20px;
+}
+
+footer .text-center {
+  text-align: center;
+}
+
+footer .img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+footer .col-md-4 img {
+  margin: 0 auto;
+}
+
+footer .col-6 {
+  display: flex;
+  align-items: center;
+}
+
+footer .col-6 img {
+  margin-right: 10px;
+}
+
+footer .text-right {
+  text-align: right;
+}
+
+footer .float-circle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 50%;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+footer .float-circle:hover {
+  background-color: #2980b9;
+}
+
+footer .color-titulo {
+  color: #ffffff;
+}
+
+footer .py-2 {
+  padding: 10px 0;
+}
+
+footer .img_white {
+  filter: invert(1);
+}

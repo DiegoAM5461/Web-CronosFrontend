@@ -1,0 +1,15 @@
+.card-caracteristicas{
+    font-size: 1.5em;
+}
+.card-caracteristicas p{
+    align-items: center;
+    text-align: center;
+}
+
+.card-caracteristicas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centra el contenido verticalmente */
+    align-items: center;      /* Centra el contenido horizontalmente */
+    height: 200px;            /* Ajusta este valor según lo que necesites */
+  }

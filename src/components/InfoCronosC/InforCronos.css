@@ -1,0 +1,99 @@
+/* Estilo general del contenedor */
+.info-inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    width: 65%;
+    margin: 0 auto;
+    padding: 20px;
+    color: rgb(255, 255, 255); /* Color de texto blanco */
+    font-family: Arial, sans-serif;
+    min-height: 500px;
+}
+
+/* Estilo para el título */
+.title-info {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Estilo para la descripción */
+.descripción-info {
+    max-height: 50rem;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 80px;
+    word-wrap: break-word;
+    max-width: 65rem; 
+    margin-right: 2rem ;
+}
+
+
+/* Posicionamiento del botón sobre imagen1 */
+.boton-personalizado {
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: calc(25rem + 2rem); /* 2rem por encima de la imagen1 */
+    left: 0; /* Alineado a la izquierda */
+    margin-left: 4rem; /* Opcional: un poco de margen para separarlo del borde */
+    margin-bottom: 1rem;
+}
+
+/* Estilo para la imagen 1 (centrada abajo) */
+.imagen1 {
+    width: 60rem; /* Ajuste para hacerla responsiva */
+    max-width: 60rem; /* Tamaño máximo de la imagen */
+    height: 25rem;
+    width: 100%;
+    background-color: lightgray;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: block;
+}
+
+/* Estilo para la imagen 2 (a la derecha) */
+.imagen2 {
+    width: 30rem;
+    height: 32rem;
+    background-color: lightgray;
+    position: absolute;
+    right: 0;
+    top: 50px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .info-inicio {
+        width: 90%; /* Reduce el ancho del contenedor en pantallas pequeñas */
+        padding: 10px;
+    }
+    
+    .title-info {
+        font-size: 2.5rem; /* Disminuye el tamaño del título */
+    }
+
+    .descripción-info {
+        font-size: 1.5rem; /* Disminuye el tamaño de la descripción */
+    }
+
+    .imagen1 {
+        width: 100%; /* Asegura que la imagen sea responsiva */
+        height: auto;
+        max-width: 100%; /* Ocupa el 100% del contenedor sin exceder */
+    }
+
+    .imagen2 {
+        width: 200px; /* Reduce el tamaño de la imagen 2 */
+        height: 200px;
+    }
+
+    .boton-personalizado {
+        font-size: 1rem; /* Botón ligeramente más pequeño en móviles */
+        padding: 8px 16px;
+        bottom: calc(150px + 1rem); /* Ajuste en móviles */
+    }
+}

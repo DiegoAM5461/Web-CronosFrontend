@@ -1,0 +1,331 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  html{
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-color: #000000;
+    color: #333; /* Color del texto, si lo quieres cambiar también */
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  /* UTILIDADES */
+  
+  .container{
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+  
+  /*   CARACTERISTICAS   */
+  
+  .container-caracteristicas{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    padding: 3rem;
+  }
+  
+  .card-caracteristicas{
+    background: #ffffffc0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.159);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex: 1;
+  }
+  .card-caracteristicas:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px #4a4aee;
+  }
+  .card-caracteristicas h2 {
+    margin: 0 0 10px;
+    color: #000000;
+  }
+  .card-caracteristicas p {
+    margin: 0 0 20px;
+    color: #000000;
+  }
+  
+  /*INFO*/
+  .informacion-adicional{
+    display: grid;
+    gap: 3rem;
+    padding: 3rem;
+  }
+  
+  .info-adicional {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffffc0;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .info-adicional h1 {
+    font-size: 5em;
+    color: #000000;
+  }
+  
+  .info-adicional p {
+    font-size: 1.5em;
+    color: #000000;
+  }
+  
+  .top-products {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  }
+  
+  .container-options {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  }
+  
+  .container-options span {
+  color: #777;
+  background-color: #fff;
+  padding: 0.7rem 3rem;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  border-radius: 2rem;
+  cursor: pointer;
+  }
+  
+  .container-options span:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  }
+  
+  .container-options span.active {
+  background-color: var(--primary-color);
+  color: #fff;
+  }
+  
+  /* ********************************** */
+  /*            TOP PRODUCTS            */
+  /* ********************************** */
+  .top-products {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  }
+  .heading-1{
+    text-align: center;
+    color: #fff;
+  }
+  
+  .container-options {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  }
+  
+  .container-options span {
+  color: #ffffff;
+  background-color: #000080;
+  padding: 0.7rem 3rem;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  border-radius: 2rem;
+  cursor: pointer;
+  }
+  
+  .container-options span:hover {
+  background-color: #00008063;
+  color: #ffffff  ;
+  }
+  
+  .container-options span.active {
+  background-color: #00008055;
+  color: #fff;
+  }
+  
+  /* Products */
+  .container-products {
+    max-width: 1200px;
+    margin: 0   auto;
+  display: grid;
+    justify-content: space-between;
+    padding: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  gap: 4rem; 
+    padding-bottom: 60px;
+  }
+  
+  .card-product {
+  background-color: #ffffffc0;
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.1);
+  }
+  
+  .container-img {
+  position:relative;
+  }
+  
+  .container-img img {
+  width: 100%;
+    border-radius: 10px;
+  }
+  
+  .container-img .discount {
+  position: absolute;
+  left: 0;
+  background-color: #000000;
+  color: #fff;
+  padding: 2px 1.2rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  }
+  
+  .card-product:hover .discount {
+  background-color: #000;
+    transform: scale(1.05);
+  }
+  
+  .button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+  position: absolute;
+  top: 0;
+  right: -3rem;
+  z-index: -1;
+  transition: all 0.4s ease;
+  }
+  
+  .button-group span {
+  border: 1px solid #000000;
+  padding: 0.8rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  }
+  
+  .button-group span:hover {
+  background-color: #000;
+  }
+  
+  .button-group span i {
+  font-size: 1.5rem;
+  color: #000;
+  }
+  
+  .button-group span:hover i {
+  color: #ffffff;
+  }
+  
+  .card-product:hover .button-group {
+  z-index: 0;
+  right: -1rem;
+  }
+  
+  
+  
+  .content-card-product {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, min-content);
+  row-gap: 1rem;
+  }
+  
+  .stars {
+  grid-row: 1/2;
+  grid-column: 1/-1;
+  }
+  
+  .stars i {
+  font-size: 1.3rem;
+  color: #000;
+  }
+  
+  .content-card-product h3 {
+  grid-row: 2/3;
+  grid-column: 1/-1;
+  
+  font-weight: 400;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  }
+  
+  .content-card-product h3:hover {
+  color: #000;
+  }
+  
+  .add-cart {
+  justify-self: start;
+  border: 2px solid #000;
+  padding: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  
+  .add-cart:hover {
+  background-color: #000;
+  }
+  
+  .add-cart i {
+  font-size: 1.5rem;
+  color: #000;
+  }
+  
+  .add-cart:hover i {
+  color: #fff;
+  }
+  
+  .content-card-product .price {
+  justify-self: end;
+  align-self: center;
+  
+  font-size: 1.7rem;
+  font-weight: 600;
+  }
+  
+  .content-card-product .price span {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-decoration: line-through;
+  color: #777;
+  margin-left: 0.5rem;
+  }
