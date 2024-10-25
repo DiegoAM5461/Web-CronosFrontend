@@ -1,6 +1,6 @@
-import './Header.css'
-import { Navbar } from '../NavbarC/Navbar'
-import { NavLink } from 'react-router-dom'
+import "./Header.css";
+import { Navbar } from "../NavbarC/Navbar";
+import { NavLink } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -20,14 +20,16 @@ export const Header = () => {
             <div className="container-logo">
               <i className="fa-solid fa-champagne-glasses"></i>
               <h1 className="logo">
-                <NavLink className="nav-link" to='/'>Cronos Restobar</NavLink>
+                <NavLink className="nav-link" to="/">
+                  Cronos Restobar
+                </NavLink>
               </h1>
             </div>
 
             <div className="container-user">
-            <NavLink className="nav-link" to='/login'>
+              <NavLink className="nav-link" to="/login">
                 <i className="fa-solid fa-user"></i>
-            </NavLink>
+              </NavLink>
               <a href="https://www.facebook.com/LluviaDeArenaOf/">
                 <i className="fa-brands fa-facebook-f"></i>
               </a>
@@ -43,5 +45,5 @@ export const Header = () => {
         <Navbar />
       </header>
     </>
-  )
-}
+  );
+};

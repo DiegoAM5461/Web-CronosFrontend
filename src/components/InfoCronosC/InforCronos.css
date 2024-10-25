@@ -28,6 +28,8 @@
     word-wrap: break-word;
     max-width: 65rem; 
     margin-right: 2rem ;
+    width: 1000px;
+    height: 175px;
 }
 
 
@@ -35,21 +37,22 @@
 .boton-personalizado {
     font-size: 1.5rem;
     position: absolute;
-    bottom: calc(25rem + 2rem); /* 2rem por encima de la imagen1 */
+    top: 34rem; /* 2rem por encima de la imagen1 */
     left: 0; /* Alineado a la izquierda */
-    margin-left: 4rem; /* Opcional: un poco de margen para separarlo del borde */
-    margin-bottom: 1rem;
+    margin-left: 8rem; /* Opcional: un poco de margen para separarlo del borde */
+}
+
+.image-infor1{
+    max-width: 100%;
 }
 
 /* Estilo para la imagen 1 (centrada abajo) */
 .imagen1 {
-    width: 60rem; /* Ajuste para hacerla responsiva */
-    max-width: 60rem; /* Tamaño máximo de la imagen */
+    width: 100%; /* Ajuste para hacerla responsiva */
     height: 25rem;
-    width: 100%;
     background-color: lightgray;
     margin-top: 5rem;
-    margin-left: auto;
+    margin-left: 15rem;
     margin-right: auto;
     position: relative;
     display: block;
@@ -63,37 +66,4 @@
     position: absolute;
     right: 0;
     top: 50px;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .info-inicio {
-        width: 90%; /* Reduce el ancho del contenedor en pantallas pequeñas */
-        padding: 10px;
-    }
-    
-    .title-info {
-        font-size: 2.5rem; /* Disminuye el tamaño del título */
-    }
-
-    .descripción-info {
-        font-size: 1.5rem; /* Disminuye el tamaño de la descripción */
-    }
-
-    .imagen1 {
-        width: 100%; /* Asegura que la imagen sea responsiva */
-        height: auto;
-        max-width: 100%; /* Ocupa el 100% del contenedor sin exceder */
-    }
-
-    .imagen2 {
-        width: 200px; /* Reduce el tamaño de la imagen 2 */
-        height: 200px;
-    }
-
-    .boton-personalizado {
-        font-size: 1rem; /* Botón ligeramente más pequeño en móviles */
-        padding: 8px 16px;
-        bottom: calc(150px + 1rem); /* Ajuste en móviles */
-    }
 }

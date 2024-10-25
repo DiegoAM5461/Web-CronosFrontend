@@ -1,4 +1,4 @@
-import { Button } from "../components/ButtonC/Button";
+import { Links } from "../components/LinkC/Links";
 import { Footer } from "../components/FooterC/Footer";
 import { Header } from "../components/HeaderC/Header";
 import './Pages-Css/Contacto.css'
@@ -47,7 +47,7 @@ export const Contacto = () => {
         <div className="reservation">
           <h2>¡Haz tu reservación ahora!</h2>
           <br />
-          <Button direccion={"reserva"} titulo={"Reserva"}/>
+          <Links direccion={"reserva"} titulo={"Reserva"}/>
         </div>
       </main>
       <Footer/>

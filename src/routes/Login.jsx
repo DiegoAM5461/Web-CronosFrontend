@@ -1,6 +1,6 @@
-import { ButtonO } from "../components/ButtonOC/ButtonO";
 import "./Pages-Css/Login.css";
-import { NavLink, Link } from "react-router-dom";
+import { Button } from "../components/ButtonC/Button";
+import { NavLink } from "react-router-dom";
 export const Login = () => {
   return (
     <>
@@ -29,13 +29,7 @@ export const Login = () => {
               </div>
             </div>
             <div className="form-group">
-              <button type="submit">
-                <ButtonO
-                direccion={"login"}
-                titulo={"Iniciar Sesión"}
-                />
-              </button>
-              <br />
+            <Button title="Iniciar Sesión" className="submit-button" />
               <NavLink className="volver" to="/">
                 Volver a la página principal
               </NavLink>

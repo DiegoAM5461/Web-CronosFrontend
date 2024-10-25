@@ -1,11 +1,11 @@
-import './Button.css'
-import { NavLink } from 'react-router-dom'
-export const Button = ({ direccion, titulo }) => {
+import "./Button.css";
+
+export const Button = ({ title, className, ...props }) => {
   return (
-    <>
-      <div className="boton-azul">
-      <NavLink className="nav-link" to={direccion}>{titulo}</NavLink>
-      </div>    
-    </>
-  )
-}
+    <div className="button-submit">
+      <button type="submit" className={`button ${className}`} {...props}>
+        {title}
+      </button>
+    </div>
+  );
+};

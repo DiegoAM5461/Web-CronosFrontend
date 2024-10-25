@@ -1,5 +1,5 @@
 import './Banner.css'
-import { Button } from '../ButtonC/Button'
+import { Links } from '../LinkC/Links'
 
 export const Banner = () => {
   return (
@@ -16,7 +16,7 @@ export const Banner = () => {
             bebidas y comidas, sino para transportarte a un espacio y un
             ambiente único se unen para brindarte una experiencia inolvidable.
           </h2>
-          <Button direccion={"carta"} titulo={"Conocer Más"}/>
+          <Links direccion={"carta"} titulo={"Conocer Más"}/>
         </div>
       </section>
     </>

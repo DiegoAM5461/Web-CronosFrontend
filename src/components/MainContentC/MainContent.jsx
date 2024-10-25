@@ -1,4 +1,3 @@
-import { Button } from "../ButtonC/Button"
 import { CardsCaract } from "../CardCaractC/CardsCaract"
 import { CardsP } from "../CardProductC/CardsP"
 import { InfroCronos } from "../InfoCronosC/InfroCronos"
@@ -38,13 +37,13 @@ export const MainContent = () => {
 
         <InfroCronos
         titulo={"Pickeos"}
-        descipcion={"Lorem lnjkdqwjkndlsmkdewbwfqnwokdddddddddddddddem lnjkdqwjkndlsmkdewbwfqnwokdddddddddddddddem lnjkdqwjkndlsmkdewbwfqnwokddddddddddddddddasdasadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"}
+        descipcion={"Los pickeos de Cronos Restobar ofrecen una variedad de bocadillos perfectos para compartir entre amigos. Desde crocantes alitas de pollo hasta deliciosas papas rústicas con salsas especiales, cada bocado está pensado para complementar la experiencia con sabores intensos y frescos. Ideales para acompañar tus bebidas favoritas mientras disfrutas de un buen momento."}
         direccion={"../../../public/Imagenes/tequeños.jpg"}
         direccion2={"../../../public/Imagenes/alitas.jpg"}
         />
         <InfroCronos
         titulo={"Pickeos"}
-        descipcion={"Lorem lnjkdqwjkndlsmkdewbwfqnwokdddddddddddddddem lnjkdqwjkndlsmkdewbwfqnwokdddddddddddddddem lnjkdqwjkndlsmkdewbwfqnwokddddddddddddddddasdasadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"}
+        descipcion={"En bebidas, Cronos Restobar te invita a disfrutar de una carta variada que incluye cocteles clásicos, cervezas artesanales y refrescantes jugos naturales. Ya sea que prefieras un trago con toques tropicales o algo más suave, encontrarás la opción perfecta para acompañar tus pickeos y hacer que cada visita sea inolvidable."}
         direccion={"../../../public/Imagenes/tequeños.jpg"}
         direccion2={"../../../public/Imagenes/alitas.jpg"}
         />

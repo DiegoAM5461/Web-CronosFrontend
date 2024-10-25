@@ -1,15 +1,22 @@
-.boton-azul a {
-    display: inline-block; /* Para que el link se comporte como botón */
-    color: white; /* Texto blanco */
-    background-color: #000080; /* Fondo azul */
-    padding: 10px 30px; /* Espaciado interno para darle tamaño */
-    border-radius: 18px; /* Bordes redondeados */
-    text-decoration: none; /* Quitar el subrayado del enlace */
-    font-size: 1.5em; /* Tamaño de la letra */
-    transition: background-color 0.3s ease; /* Animación suave al cambiar de color */
-    background-color: #000080;
-}
-
-.boton-azul a:hover {
-    background-color: #0000cc; /* Un azul más claro al pasar el mouse */
-}
+.button-submit {
+    width: 100%; /* Ajusta el tamaño del contenedor (puedes cambiar este valor según tus necesidades) */
+    display: flex;
+    justify-content: center; /* Centrar el botón dentro del contenedor */
+    padding: 10px; /* Ajusta el padding del contenedor */
+  }
+  
+  .button {
+    font-size: 18px; /* Cambia el tamaño de la letra */
+    padding: 12px 24px; /* Ajusta el tamaño del botón */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f47e09; /* Fondo por defecto */
+    color: white; /* Color del texto */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #ec952b; /* Cambia el color del fondo cuando se hace hover */
+  }
+  
