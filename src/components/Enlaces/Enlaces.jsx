@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 
-export const Links = ({ direccion, titulo, color, hoverColor }) => {
+export const Enlaces = ({ direccion, titulo, color, hoverColor }) => {
   const buttonStyle = {
     display: 'inline-block',
     color: 'white',

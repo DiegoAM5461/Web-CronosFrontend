@@ -1,5 +1,5 @@
 import './Banner.css'
-import { Links } from '../LinkC/Links'
+import { Enlaces } from '../Enlaces/Enlaces'
 
 export const Banner = () => {
   return (
@@ -16,7 +16,7 @@ export const Banner = () => {
             bebidas y comidas, sino para transportarte a un espacio y un
             ambiente único se unen para brindarte una experiencia inolvidable.
           </h2>
-          <Links direccion={"carta"} titulo={"Conocer Más"}/>
+          <Enlaces direccion={"carta"} titulo={"Conocer Más"}/>
         </div>
       </section>
     </>

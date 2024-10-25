@@ -29,7 +29,7 @@ export const Login = () => {
               </div>
             </div>
             <div className="form-group">
-            <Button title="Iniciar Sesión" className="submit-button" />
+              <Button title="Iniciar Sesión" className="submit-button" />
               <NavLink className="volver" to="/">
                 Volver a la página principal
               </NavLink>

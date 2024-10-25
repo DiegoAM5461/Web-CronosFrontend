@@ -36,7 +36,7 @@ export const Header = () => {
               <i className="fa-brands fa-instagram"></i>
               <i className="fa-brands fa-tiktok"></i>
               <div className="content-redes">
-                <span className="text">Redes</span>
+                <span className="text"></span>
               </div>
             </div>
           </div>

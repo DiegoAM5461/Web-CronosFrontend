@@ -7,7 +7,7 @@ import { Pickeos } from "./routes/Anidados/Pickeos";
 import { Bebidas } from "./routes/Anidados/Bebidas";
 import { Platos } from "./routes/Anidados/Platos";
 import { Login } from "./routes/Login";
-import { Registro } from "./routes/Anidados/Registro";
+import { Registro } from "./routes/Registro";
 
 export const App = () => {
   return (
@@ -16,9 +16,8 @@ export const App = () => {
         <Route path="/" element={<Inicio></Inicio>}></Route>
         <Route path="/contacto" element={<Contacto></Contacto>}></Route>
         <Route path="/nosotros" element={<Nosotros></Nosotros>}></Route>
-        <Route path="/login" element={<Login />}>
-          <Route path="registro" element={<Registro></Registro>}></Route>
-        </Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/registro" element={<Registro/>}></Route>
         {/* Ruta primcipal */}
         <Route path="/carta" element={<Carta></Carta>}>
           {/* subrutas */}

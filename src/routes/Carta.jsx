@@ -19,8 +19,8 @@ export const Carta = () => {
           <NavLink to="bebidas">Bebidas</NavLink>
         </li>
       </ul>
-      <Footer />
       <Outlet />
+      <Footer />
     </>
   );
 };
