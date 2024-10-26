@@ -9,6 +9,11 @@
   padding: 2rem 0;
 }
 
+.content-soporte span{
+  font-size: 1.5rem;
+}
+
+
 .soporte {
   display: flex;
   align-items: center;
@@ -17,7 +22,7 @@
 }
 
 .soporte i {
-  font-size: 3.3rem;
+  font-size: 4rem;
   color: #fff;
 }
 

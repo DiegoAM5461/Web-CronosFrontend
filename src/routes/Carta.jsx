@@ -1,8 +1,17 @@
 import { Footer } from "../components/FooterC/Footer";
 import { Header } from "../components/HeaderC/Header";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
+import "./Pages-Css/Carta.css";
 
 export const Carta = () => {
+  const location = useLocation();
+
+  const hideElements = [
+    "/carta/bebidas",
+    "/carta/pickeos",
+    "/carta/platos",
+  ].includes(location.pathname);
+
   return (
     <>
       <Header />
@@ -20,6 +29,9 @@ export const Carta = () => {
         </li>
       </ul>
       <Outlet />
+      {!hideElements && <>
+        <h1>PERROS CALIENTES</h1>
+      </>}
       <Footer />
     </>
   );

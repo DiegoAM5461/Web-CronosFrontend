@@ -1,4 +1,4 @@
-import { Enlaces} from "../components/Enlaces/Enlaces";
+import { Enlaces } from "../components/Enlaces/Enlaces";
 import { Footer } from "../components/FooterC/Footer";
 import { Header } from "../components/HeaderC/Header";
 import './Pages-Css/Contacto.css'
@@ -46,8 +46,7 @@ export const Contacto = () => {
         <br />
         <div className="reservation">
           <h2>¡Haz tu reservación ahora!</h2>
-          <br />
-          <Enlaces direccion={"reserva"} titulo={"Reserva"}/>
+          <Enlaces direccion={"reserva"} titulo={"RESERVA"}/>
         </div>
       </main>
       <Footer/>

@@ -11,7 +11,7 @@ export const Header = () => {
             <div className="soporte">
               <i className="fa-solid fa-headset"></i>
               <div className="content-soporte">
-                <span className="text">soporte</span>
+                <span className="text">Soporte</span>
                 <br />
                 <span className="number">+51 922-941-335</span>
               </div>
