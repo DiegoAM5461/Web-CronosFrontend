@@ -1,7 +1,10 @@
+import { CartaPrincipal } from "../../components/carta-components/CartaPrincipal";
+
 export const Bebidas = () => {
   return (
     <>
-    <h1>BEBIDAS DE CARTA</h1>
+    <CartaPrincipal direccionImagen={""}
+    tituloCarta={"Pickeos"}/>
     </>
   );
 };

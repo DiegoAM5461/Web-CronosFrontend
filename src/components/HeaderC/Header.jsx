@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 export const Header = () => {
   return (
     <>
-      <header>
+      <header className="header-general">
         <div className="container-hero">
           <div className="container hero">
             <div className="soporte">

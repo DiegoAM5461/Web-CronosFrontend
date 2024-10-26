@@ -1,0 +1,455 @@
+{
+    "productos-bebidas": [
+      {
+        "id": 1,
+        "nombre": "Ron Añejo Premium",
+        "descripcion": "Ron de alta calidad envejecido durante 8 años.",
+        "precio": 45.99,
+        "disponibilidad": true,
+        "stock": 120,
+        "categoria": "Ron"
+      },
+      {
+        "id": 2,
+        "nombre": "Jinebra London Dry",
+        "descripcion": "Jinebra clásica destilada con enebro y hierbas aromáticas.",
+        "precio": 38.50,
+        "disponibilidad": true,
+        "stock": 80,
+        "categoria": "Jinebra"
+      },
+      {
+        "id": 3,
+        "nombre": "Whisky Escocés 12 años",
+        "descripcion": "Whisky escocés envejecido por 12 años, sabor suave y ahumado.",
+        "precio": 75.00,
+        "disponibilidad": true,
+        "stock": 50,
+        "categoria": "Whisky"
+      },
+      {
+        "id": 4,
+        "nombre": "Tequila Reposado",
+        "descripcion": "Tequila reposado en barricas de roble durante 6 meses.",
+        "precio": 55.25,
+        "disponibilidad": true,
+        "stock": 70,
+        "categoria": "Tequila"
+      },
+      {
+        "id": 5,
+        "nombre": "Vodka Puro Ruso",
+        "descripcion": "Vodka premium destilado 5 veces para una pureza máxima.",
+        "precio": 30.99,
+        "disponibilidad": true,
+        "stock": 90,
+        "categoria": "Vodka"
+      },
+      {
+        "id": 6,
+        "nombre": "Ron Blanco Caribeño",
+        "descripcion": "Ron blanco ideal para cócteles tropicales.",
+        "precio": 22.00,
+        "disponibilidad": true,
+        "stock": 150,
+        "categoria": "Ron"
+      },
+      {
+        "id": 7,
+        "nombre": "Jinebra Mediterránea",
+        "descripcion": "Jinebra infusionada con cítricos mediterráneos.",
+        "precio": 42.75,
+        "disponibilidad": true,
+        "stock": 60,
+        "categoria": "Jinebra"
+      },
+      {
+        "id": 8,
+        "nombre": "Whisky Bourbon Clásico",
+        "descripcion": "Whisky bourbon envejecido con notas de vainilla y caramelo.",
+        "precio": 65.50,
+        "disponibilidad": true,
+        "stock": 40,
+        "categoria": "Whisky"
+      },
+      {
+        "id": 9,
+        "nombre": "Tequila Blanco Puro",
+        "descripcion": "Tequila blanco con sabor intenso y puro de agave.",
+        "precio": 48.00,
+        "disponibilidad": true,
+        "stock": 110,
+        "categoria": "Tequila"
+      },
+      {
+        "id": 10,
+        "nombre": "Vodka con Extracto de Limón",
+        "descripcion": "Vodka suave con un toque fresco de limón.",
+        "precio": 28.50,
+        "disponibilidad": true,
+        "stock": 95,
+        "categoria": "Vodka"
+      },
+      {
+        "id": 11,
+        "nombre": "Ron Añejo Oscuro",
+        "descripcion": "Ron envejecido con un sabor rico y complejo.",
+        "precio": 50.00,
+        "disponibilidad": true,
+        "stock": 100,
+        "categoria": "Ron"
+      },
+      {
+        "id": 12,
+        "nombre": "Jinebra de Hierbas",
+        "descripcion": "Jinebra con una mezcla única de hierbas aromáticas.",
+        "precio": 39.99,
+        "disponibilidad": true,
+        "stock": 55,
+        "categoria": "Jinebra"
+      },
+      {
+        "id": 13,
+        "nombre": "Whisky Escocés 18 años",
+        "descripcion": "Whisky escocés de lujo envejecido durante 18 años.",
+        "precio": 120.00,
+        "disponibilidad": true,
+        "stock": 20,
+        "categoria": "Whisky"
+      },
+      {
+        "id": 14,
+        "nombre": "Tequila Extra Añejo",
+        "descripcion": "Tequila envejecido por más de 3 años con sabor a roble.",
+        "precio": 95.00,
+        "disponibilidad": true,
+        "stock": 30,
+        "categoria": "Tequila"
+      },
+      {
+        "id": 15,
+        "nombre": "Vodka Orgánico",
+        "descripcion": "Vodka elaborado con ingredientes 100% orgánicos.",
+        "precio": 32.00,
+        "disponibilidad": true,
+        "stock": 85,
+        "categoria": "Vodka"
+      },
+      {
+        "id": 16,
+        "nombre": "Ron con Especias",
+        "descripcion": "Ron especiado ideal para mezclas y cócteles.",
+        "precio": 27.99,
+        "disponibilidad": true,
+        "stock": 125,
+        "categoria": "Ron"
+      },
+      {
+        "id": 17,
+        "nombre": "Jinebra Rosa",
+        "descripcion": "Jinebra con un toque dulce de frutas rojas.",
+        "precio": 41.50,
+        "disponibilidad": true,
+        "stock": 70,
+        "categoria": "Jinebra"
+      },
+      {
+        "id": 18,
+        "nombre": "Whisky Irlandés Suave",
+        "descripcion": "Whisky irlandés con un sabor ligero y floral.",
+        "precio": 55.75,
+        "disponibilidad": true,
+        "stock": 65,
+        "categoria": "Whisky"
+      },
+      {
+        "id": 19,
+        "nombre": "Tequila Añejo Reserva",
+        "descripcion": "Tequila añejo con un sabor profundo y maduro.",
+        "precio": 80.00,
+        "disponibilidad": true,
+        "stock": 40,
+        "categoria": "Tequila"
+      },
+      {
+        "id": 20,
+        "nombre": "Vodka de Pepino",
+        "descripcion": "Vodka refrescante con un toque de pepino.",
+        "precio": 29.99,
+        "disponibilidad": true,
+        "stock": 100,
+        "categoria": "Vodka"
+      },
+      {
+        "id": 21,
+        "nombre": "Ron con Coco",
+        "descripcion": "Ron caribeño con un delicioso sabor a coco.",
+        "precio": 25.00,
+        "disponibilidad": true,
+        "stock": 150,
+        "categoria": "Ron"
+      },
+      {
+        "id": 22,
+        "nombre": "Jinebra Seca Clásica",
+        "descripcion": "Jinebra seca ideal para cócteles tradicionales.",
+        "precio": 37.50,
+        "disponibilidad": true,
+        "stock": 75,
+        "categoria": "Jinebra"
+      },
+      {
+        "id": 23,
+        "nombre": "Whisky de Centeno",
+        "descripcion": "Whisky elaborado con centeno, sabor especiado y complejo.",
+        "precio": 62.50,
+        "disponibilidad": true,
+        "stock": 45,
+        "categoria": "Whisky"
+      },
+      {
+        "id": 24,
+        "nombre": "Tequila Cristalino",
+        "descripcion": "Tequila añejo filtrado para un color claro y sabor suave.",
+        "precio": 88.00,
+        "disponibilidad": true,
+        "stock": 35,
+        "categoria": "Tequila"
+      },
+      {
+        "id": 25,
+        "nombre": "Vodka Triple Destilado",
+        "descripcion": "Vodka suave destilado tres veces para mayor pureza.",
+        "precio": 27.00,
+        "disponibilidad": true,
+        "stock": 120,
+        "categoria": "Vodka"
+      },
+      {
+        "id": 26,
+        "nombre": "Ron Añejo Especial",
+        "descripcion": "Ron especial con un sabor profundo y envejecido.",
+        "precio": 48.00,
+        "disponibilidad": true,
+        "stock": 110,
+        "categoria": "Ron"
+      },
+      {
+        "id": 27,
+        "nombre": "Jinebra con Flores",
+        "descripcion": "Jinebra infusionada con pétalos de flores para un aroma delicado.",
+        "precio": 43.75,
+        "disponibilidad": true,
+        "stock": 50,
+        "categoria": "Jinebra"
+      },
+      {
+        "id": 28,
+        "nombre": "Whisky Escocés Single Malt",
+        "descripcion": "Whisky escocés de una sola malta, sabor complejo.",
+        "precio": 85.00,
+        "disponibilidad": true,
+        "stock": 30,
+        "categoria": "Whisky"
+      },
+      {
+        "id": 29,
+        "nombre": "Tequila Gold",
+        "descripcion": "Tequila dorado con un toque dulce y suave.",
+        "precio": 50.25,
+        "disponibilidad": true,
+        "stock": 90,
+        "categoria": "Tequila"
+      },
+      {
+        "id": 30,
+        "nombre": "Vodka con Moras",
+        "descripcion": "Vodka con un sabor afrutado de moras frescas.",
+        "precio": 33.00,
+        "disponibilidad": true,
+        "stock": 85,
+        "categoria": "Vodka"
+      },
+      {
+        "id": 31,
+        "nombre": "Ron Oscuro Reserva",
+        "descripcion": "Ron oscuro con sabor fuerte y notas de caramelo.",
+        "precio": 52.00,
+        "disponibilidad": true,
+        "stock": 75,
+        "categoria": "Ron"
+      },
+      {
+        "id": 32,
+        "nombre": "Jinebra Afrutada",
+        "descripcion": "Jinebra infusionada con frutas exóticas.",
+        "precio": 40.50,
+        "disponibilidad": true,
+        "stock": 95,
+        "categoria": "Jinebra"
+      },
+      {
+        "id": 33,
+        "nombre": "Whisky con Miel",
+        "descripcion": "Whisky con un toque dulce de miel natural.",
+        "precio": 53.25,
+        "disponibilidad": true,
+        "stock": 100,
+        "categoria": "Whisky"
+      },
+      {
+        "id": 34,
+        "nombre": "Tequila Plata",
+        "descripcion": "Tequila joven con un sabor puro y fresco.",
+        "precio": 45.75,
+        "disponibilidad": true,
+        "stock": 120,
+        "categoria": "Tequila"
+      },
+      {
+        "id": 35,
+        "nombre": "Vodka de Naranja",
+        "descripcion": "Vodka refrescante con sabor a naranja madura.",
+        "precio": 28.75,
+        "disponibilidad": true,
+        "stock": 105,
+        "categoria": "Vodka"
+      },
+      {
+        "id": 36,
+        "nombre": "Ron Caramelo",
+        "descripcion": "Ron con un suave toque de caramelo.",
+        "precio": 26.00,
+        "disponibilidad": true,
+        "stock": 140,
+        "categoria": "Ron"
+      },
+      {
+        "id": 37,
+        "nombre": "Jinebra Premium",
+        "descripcion": "Jinebra de alta gama con ingredientes seleccionados.",
+        "precio": 47.50,
+        "disponibilidad": true,
+        "stock": 60,
+        "categoria": "Jinebra"
+      },
+      {
+        "id": 38,
+        "nombre": "Whisky Ahumado",
+        "descripcion": "Whisky con un fuerte sabor ahumado.",
+        "precio": 70.00,
+        "disponibilidad": true,
+        "stock": 55,
+        "categoria": "Whisky"
+      },
+      {
+        "id": 39,
+        "nombre": "Tequila Mezcal",
+        "descripcion": "Tequila con un toque de mezcal para un sabor único.",
+        "precio": 62.00,
+        "disponibilidad": true,
+        "stock": 50,
+        "categoria": "Tequila"
+      },
+      {
+        "id": 40,
+        "nombre": "Vodka Helado",
+        "descripcion": "Vodka ideal para tomar bien frío.",
+        "precio": 25.50,
+        "disponibilidad": true,
+        "stock": 130,
+        "categoria": "Vodka"
+      },
+      {
+        "id": 41,
+        "nombre": "Ron Premium Reserva",
+        "descripcion": "Ron premium envejecido en barricas de roble.",
+        "precio": 60.00,
+        "disponibilidad": true,
+        "stock": 45,
+        "categoria": "Ron"
+      },
+      {
+        "id": 42,
+        "nombre": "Jinebra Citrus",
+        "descripcion": "Jinebra infusionada con limón y pomelo.",
+        "precio": 38.25,
+        "disponibilidad": true,
+        "stock": 100,
+        "categoria": "Jinebra"
+      },
+      {
+        "id": 43,
+        "nombre": "Whisky Reserva Especial",
+        "descripcion": "Whisky de reserva especial, sabor único y complejo.",
+        "precio": 95.50,
+        "disponibilidad": true,
+        "stock": 20,
+        "categoria": "Whisky"
+      },
+      {
+        "id": 44,
+        "nombre": "Tequila Blanco Suave",
+        "descripcion": "Tequila blanco con un sabor ligero y suave.",
+        "precio": 40.00,
+        "disponibilidad": true,
+        "stock": 115,
+        "categoria": "Tequila"
+      },
+      {
+        "id": 45,
+        "nombre": "Vodka Clásico",
+        "descripcion": "Vodka clásico sin saborizantes.",
+        "precio": 22.99,
+        "disponibilidad": true,
+        "stock": 140,
+        "categoria": "Vodka"
+      },
+      {
+        "id": 46,
+        "nombre": "Ron Miel",
+        "descripcion": "Ron dulce con un toque de miel.",
+        "precio": 30.00,
+        "disponibilidad": true,
+        "stock": 125,
+        "categoria": "Ron"
+      },
+      {
+        "id": 47,
+        "nombre": "Jinebra Botánica",
+        "descripcion": "Jinebra con una mezcla botánica única.",
+        "precio": 44.50,
+        "disponibilidad": true,
+        "stock": 70,
+        "categoria": "Jinebra"
+      },
+      {
+        "id": 48,
+        "nombre": "Whisky Canadiense",
+        "descripcion": "Whisky canadiense suave y equilibrado.",
+        "precio": 58.25,
+        "disponibilidad": true,
+        "stock": 80,
+        "categoria": "Whisky"
+      },
+      {
+        "id": 49,
+        "nombre": "Tequila Reposado Especial",
+        "descripcion": "Tequila reposado con un toque especial de agave.",
+        "precio": 68.00,
+        "disponibilidad": true,
+        "stock": 55,
+        "categoria": "Tequila"
+      },
+      {
+        "id": 50,
+        "nombre": "Vodka de Fresa",
+        "descripcion": "Vodka con un toque dulce y afrutado de fresa.",
+        "precio": 31.00,
+        "disponibilidad": true,
+        "stock": 90,
+        "categoria": "Vodka"
+      }
+    ]
+  }
+  

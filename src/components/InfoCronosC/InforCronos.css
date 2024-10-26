@@ -1,69 +1,69 @@
-/* Estilo general del contenedor */
+/* Contenedor principal como Grid */
 .info-inicio {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    width: 65%;
+    display: grid;
+    grid-template-columns: 60% 40%; /* Dos columnas, 60% para el texto y 40% para las imágenes */
+    grid-template-rows: auto 1fr; /* Filas automáticas que se ajustan a su contenido */
+    gap: 20px; /* Espacio entre los elementos */
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    color: rgb(255, 255, 255); /* Color de texto blanco */
+    color: rgb(255, 255, 255);
     font-family: Arial, sans-serif;
-    min-height: 500px;
 }
 
-/* Estilo para el título */
+/* Texto (info-text) ocupa la primera columna, fila 1 */
+.info-text {
+    grid-column: 1 / 2; /* Coloca el texto en la primera columna */
+    grid-row: 1 / 2; /* Coloca el texto en la primera fila */
+}
+
 .title-info {
     font-size: 4rem;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-/* Estilo para la descripción */
 .descripción-info {
-    max-height: 50rem;
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
     word-wrap: break-word;
-    max-width: 65rem; 
-    margin-right: 2rem ;
-    width: 1000px;
-    height: 175px;
 }
 
-
-/* Posicionamiento del botón sobre imagen1 */
+/* Botón personalizado */
 .boton-personalizado {
     font-size: 1.5rem;
-    position: absolute;
-    top: 34rem; /* 2rem por encima de la imagen1 */
-    left: 0; /* Alineado a la izquierda */
-    margin-left: 8rem; /* Opcional: un poco de margen para separarlo del borde */
+    margin-top: 20px;
 }
 
-.image-infor1{
-    max-width: 100%;
+/* Imagen 1 (colocada en la fila 2, columna 1) */
+.image-infor1 {
+    grid-column: 1 / 2; /* Segunda fila, primera columna */
+    grid-row: 2 / 3;
+    align-self: start; /* Alineada arriba */
+    width: 100%;
 }
 
-/* Estilo para la imagen 1 (centrada abajo) */
 .imagen1 {
-    width: 100%; /* Ajuste para hacerla responsiva */
-    height: 25rem;
+    width: 100%;
+    height: 100%;
+    max-width: 50rem;
+    max-height: 27rem;
     background-color: lightgray;
-    margin-top: 5rem;
-    margin-left: 15rem;
-    margin-right: auto;
-    position: relative;
-    display: block;
+    margin-left: 20rem;
 }
 
-/* Estilo para la imagen 2 (a la derecha) */
+/* Imagen 2 (colocada en la primera fila, segunda columna) */
+.image-infor2 {
+    grid-column: 2 / 3; /* Primera fila, segunda columna */
+    grid-row: 1 / 3; /* Ocupa ambas filas para alinearse con el contenido de la izquierda */
+    align-self: start; /* Alineada arriba */
+    width: 100%;
+}
+
 .imagen2 {
-    width: 30rem;
-    height: 32rem;
+    width: 100%;
+    height: auto;
     background-color: lightgray;
-    position: absolute;
-    right: 0;
-    top: 50px;
 }

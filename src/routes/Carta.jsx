@@ -2,6 +2,7 @@ import { Footer } from "../components/FooterC/Footer";
 import { Header } from "../components/HeaderC/Header";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import "./Pages-Css/Carta.css";
+import { CartaPrincipal } from "../components/carta-components/CartaPrincipal";
 
 export const Carta = () => {
   const location = useLocation();
@@ -14,25 +15,33 @@ export const Carta = () => {
 
   return (
     <>
-      <Header />
-      <ul className="carta-navbar">
-        <li>
-          <NavLink to="pickeos">Pickeos</NavLink>
-        </li>
-        <li className="divider">|</li>
-        <li>
-          <NavLink to="platos">Platos</NavLink>
-        </li>
-        <li className="divider">|</li>
-        <li>
-          <NavLink to="bebidas">Bebidas</NavLink>
-        </li>
-      </ul>
-      <Outlet />
-      {!hideElements && <>
-        <h1>PERROS CALIENTES</h1>
-      </>}
-      <Footer />
+      <div className="carta-general">
+        <Header />
+        <div className="navbar-container">
+          <ul className="carta-navbar">
+            <li>
+              <NavLink to="pickeos">Pickeos</NavLink>
+            </li>
+            <li className="divider">|</li>
+            <li>
+              <NavLink to="platos">Platos</NavLink>
+            </li>
+            <li className="divider">|</li>
+            <li>
+              <NavLink to="bebidas">Bebidas</NavLink>
+            </li>
+          </ul>
+        </div>
+        <Outlet />
+        {!hideElements && (
+          <>
+            <div className="carta-principal-container">
+              <CartaPrincipal tituloCarta={"Pickeos"} direccionImagen={""} />
+            </div>
+          </>
+        )}
+        <Footer />
+      </div>
     </>
   );
 };

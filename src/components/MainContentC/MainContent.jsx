@@ -44,7 +44,7 @@ export const MainContent = () => {
           direccion2={"../../../public/Imagenes/alitas.jpg"}
         />
         <InfroCronos
-          titulo={"Pickeos"}
+          titulo={"Bebidas"}
           descipcion={
             "En bebidas, Cronos Restobar te invita a disfrutar de una carta variada que incluye cocteles clásicos, cervezas artesanales y refrescantes jugos naturales. Ya sea que prefieras un trago con toques tropicales o algo más suave, encontrarás la opción perfecta para acompañar tus pickeos y hacer que cada visita sea inolvidable."
           }

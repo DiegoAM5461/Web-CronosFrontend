@@ -1,11 +1,11 @@
 import './CardsP.css'
 
-export const CardsP = ({direccion, tagDireccion,nombre,precio}) => {
+export const CardsP = ({direccion,nombre,precio}) => {
   return (
     <>
       <div className="card-product">
         <div className="container-img">
-          <img src={direccion} alt={tagDireccion} />
+          <img src={direccion} alt={nombre} />
           <span className="discount"></span>
         </div>
         <br />

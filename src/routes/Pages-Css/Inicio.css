@@ -14,7 +14,7 @@
   }
   
   html{
-    font-size: 62.5%;
+    font-size: 70%;
     font-family: 'Poppins', sans-serif;
   }
   
@@ -32,6 +32,10 @@
   }
   /* UTILIDADES */
   
+.inicio-general{
+  width: calc(100%);
+}
+
   .container{
     max-width: 120rem;
     margin: 0 auto;

@@ -8,10 +8,13 @@ import './Pages-Css/Inicio.css'
 export const Inicio = () => {
   return (
     <>
+      <div className="inicio-general">
         <Header/>
         <Banner/>
         <MainContent/>
         <Footer/>
+      </div>
+        
     </>
   )
 }

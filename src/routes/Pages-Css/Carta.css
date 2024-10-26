@@ -26,3 +26,15 @@
     font-weight: bold;
     background-color: #fff;
   }
+
+  .navbar-container {
+    position: relative;
+    z-index: 2; /* Para asegurarse de que esté por encima del contenido */
+  }
+  
+  .carta-principal-container {
+    position: relative;
+    z-index: 3; /* Para asegurarse de que esté por debajo de la barra de navegación */
+    margin-top: 20px; /* Ajusta el margen según necesites */
+  }
+  
