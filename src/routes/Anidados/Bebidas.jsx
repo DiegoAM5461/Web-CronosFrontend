@@ -4,7 +4,7 @@ export const Bebidas = () => {
   return (
     <>
     <CartaPrincipal direccionImagen={""}
-    tituloCarta={"Pickeos"}/>
+    tituloCarta={"Bebidas"}/>
     </>
   );
 };

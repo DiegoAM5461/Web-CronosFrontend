@@ -1,4 +1,6 @@
 import "./CartaPrincipal.css";
+import { ItemCarta } from "./ItemCarta";
+
 export const CartaPrincipal = ({tituloCarta, direccionImagen}) => {
   return (
     <>
@@ -14,39 +16,7 @@ export const CartaPrincipal = ({tituloCarta, direccionImagen}) => {
       <section className="menu-cartaPrincipal">
         <h2>Menu de pickeos</h2>
         <div className="items-cartaPrincipal">
-          <div className="item-cartaPrincipal">
-            <div className="item-image-cartaPrincipal">Imagen</div>
-            <h3>Nombre del pickeo</h3>
-            <p>Precio desde: X</p>
-            <button>Agregar</button>
-          </div>
-          <div className="item-cartaPrincipal">
-            <div className="item-image-cartaPrincipal">Imagen</div>
-            <h3>Nombre del pickeo</h3>
-            <p>Precio desde: X</p>
-            <button>Agregar</button>
-          </div><div className="item-cartaPrincipal">
-            <div className="item-image-cartaPrincipal">Imagen</div>
-            <h3>Nombre del pickeo</h3>
-            <p>Precio desde: X</p>
-            <button>Agregar</button>
-          </div><div className="item-cartaPrincipal">
-            <div className="item-image-cartaPrincipal">Imagen</div>
-            <h3>Nombre del pickeo</h3>
-            <p>Precio desde: X</p>
-            <button>Agregar</button>
-          </div><div className="item-cartaPrincipal">
-            <div className="item-image-cartaPrincipal">Imagen</div>
-            <h3>Nombre del pickeo</h3>
-            <p>Precio desde: X</p>
-            <button>Agregar</button>
-          </div>
-          <div className="item-cartaPrincipal">
-            <div className="item-image-cartaPrincipal">Imagen</div>
-            <h3>Nombre del pickeo</h3>
-            <p>Precio desde: X</p>
-            <button>Agregar</button>
-          </div>
+         <ItemCarta/>
         </div>
       </section>
       <section className="order-cartaPrincipal">

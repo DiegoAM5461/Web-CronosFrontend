@@ -9,7 +9,7 @@ export const Contacto = () => {
       <main className="main-content">
         <div className="contact-header">
           <h1>Contacto</h1>
-          <hr className="divider" />
+          <hr className="divider-contact" />
         </div>
         <br /><br />
         <div className="contact-info">
