@@ -14,7 +14,7 @@ export const CartaPrincipal = ({tituloCarta, direccionImagen}) => {
       </section>
       <div className="container-cartaPrincipal">
       <section className="menu-cartaPrincipal">
-        <h2>Menu de pickeos</h2>
+        <h2>Menu de {tituloCarta}</h2>
         <div className="items-cartaPrincipal">
          <ItemCarta/>
         </div>

@@ -36,7 +36,7 @@ export const Carta = () => {
         {!hideElements && (
           <>
             <div className="carta-principal-container">
-              <CartaPrincipal tituloCarta={"Pickeos"} direccionImagen={""} />
+              <CartaPrincipal tituloCarta={"Bebidas"} direccionImagen={""} />
             </div>
           </>
         )}
