@@ -16,12 +16,13 @@
   border-radius: 10px;
   width: 550px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  position: relative; /* Asegura que el botón "X" se posicione relativo a este contenedor */
 }
 
 .registro-container h2 {
   color: #fff;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 4rem;
 }
 
@@ -57,7 +58,7 @@
   align-items: center;
   color: #ccc;
   font-size: 0.9em;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .checkbox-container input {
@@ -80,4 +81,26 @@
 
 .boton-registrar:hover {
   background-color: #e65500;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+}
+
+.regresar {
+  font-size: 40px;
+}
+
+.regresar-inicio {
+  position: absolute; /* Posiciona en relación con .registro-container */
+  top: 10px; /* Ajusta la posición en la parte superior */
+  right: 20px; /* Ajusta la posición en la parte derecha */
+  font-size: 24px; /* Tamaño de la "X" */
+  font-weight: bold; /* Asegura que se vea claramente */
+  text-decoration: none; /* Elimina el subrayado */
+  color: #ffffff; /* Color de la "X" */
+  background-color: transparent; /* Sin fondo */
+  border: none; /* Sin bordes */
+  cursor: pointer; /* Cambia el cursor para que sea clickeable */
 }

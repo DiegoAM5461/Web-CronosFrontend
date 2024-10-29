@@ -1,0 +1,66 @@
+.sidebar-admin {
+  width: 250px; /* Define el ancho del sidebar */
+  height: 100vh; /* Hace que el sidebar ocupe toda la altura de la pantalla */
+  background-color: #000000; /* Color de fondo negro */
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  position: fixed; /* Mantiene el sidebar fijo en su lugar */
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.name-role {
+  font-size: 14px;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav a {
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  font-weight: bold;
+  font-size: 2.4rem;
+}
+
+.nav a:hover {
+  background-color: #1a1a1a;
+}
+
+.logout {
+  margin-top: 20px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.logout a {
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+}

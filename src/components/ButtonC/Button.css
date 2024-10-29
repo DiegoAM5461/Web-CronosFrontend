@@ -3,17 +3,18 @@
     display: flex;
     justify-content: center; /* Centrar el botón dentro del contenedor */
     padding: 10px; /* Ajusta el padding del contenedor */
+    font-size: 1.4rem;
   }
   
   .button {
-    font-size: 18px; /* Cambia el tamaño de la letra */
-    padding: 12px 24px; /* Ajusta el tamaño del botón */
+    padding: 6px 10px; /* Ajusta el tamaño del botón */
     border-radius: 8px; /* Bordes redondeados */
     background-color: #f47e09; /* Fondo por defecto */
     color: white; /* Color del texto */
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+
   }
   
   .button:hover {

@@ -2,6 +2,7 @@ import { Button } from "../components/ButtonC/Button";
 import "./Pages-Css/Registro.css";
 import { useNavigate } from "react-router-dom"; // Importa useNavigate
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export const Registro = () => {
   const navigate = useNavigate(); // Inicializa el hook useNavigate
@@ -29,6 +30,8 @@ export const Registro = () => {
 
     // Validaciones de los campos
     const newErrors = {};
+    const emailPattern =
+      /^[a-zA-Z0-9._%+-]+@(gmail\.com|hotmail\.com|outlook\.com)$/;
 
     if (!formData.nombre) {
       newErrors.nombre = "El nombre es obligatorio.";
@@ -38,6 +41,9 @@ export const Registro = () => {
     }
     if (!formData.email) {
       newErrors.email = "El email es obligatorio.";
+    } else if (!emailPattern.test(formData.email)) {
+      newErrors.email =
+        "El email debe ser un correo válido de Gmail, Hotmail o Outlook.";
     }
     if (!formData.contrasena) {
       newErrors.contrasena = "La contraseña es obligatoria.";
@@ -61,7 +67,10 @@ export const Registro = () => {
   return (
     <div className="registro-containerPadre">
       <div className="registro-container">
-        <h2>-----Registro-----</h2>
+      <NavLink className="regresar-inicio" to="/">
+        X
+      </NavLink>
+        <h2>Registro </h2>
         <p>Esto solo tomará unos minutos</p>
         <form>
           <div className="form-control">
@@ -73,7 +82,9 @@ export const Registro = () => {
               value={formData.nombre}
               onChange={handleInputChange}
             />
-            {errors.nombre && <span className="error-message">{errors.nombre}</span>}
+            {errors.nombre && (
+              <span className="error-message">{errors.nombre}</span>
+            )}
           </div>
           <div className="form-control">
             <label htmlFor="apellido">Apellido</label>
@@ -84,7 +95,9 @@ export const Registro = () => {
               value={formData.apellido}
               onChange={handleInputChange}
             />
-            {errors.apellido && <span className="error-message">{errors.apellido}</span>}
+            {errors.apellido && (
+              <span className="error-message">{errors.apellido}</span>
+            )}
           </div>
           <div className="form-control">
             <label htmlFor="email">Email</label>
@@ -95,7 +108,9 @@ export const Registro = () => {
               value={formData.email}
               onChange={handleInputChange}
             />
-            {errors.email && <span className="error-message">{errors.email}</span>}
+            {errors.email && (
+              <span className="error-message">{errors.email}</span>
+            )}
           </div>
           <div className="form-control">
             <label htmlFor="contrasena">Contraseña</label>
@@ -106,7 +121,9 @@ export const Registro = () => {
               value={formData.contrasena}
               onChange={handleInputChange}
             />
-            {errors.contrasena && <span className="error-message">{errors.contrasena}</span>}
+            {errors.contrasena && (
+              <span className="error-message">{errors.contrasena}</span>
+            )}
           </div>
           <div className="form-control">
             <label htmlFor="confirmarContrasena">Confirmar Contraseña</label>
@@ -118,7 +135,9 @@ export const Registro = () => {
               onChange={handleInputChange}
             />
             {errors.confirmarContrasena && (
-              <span className="error-message">{errors.confirmarContrasena}</span>
+              <span className="error-message">
+                {errors.confirmarContrasena}
+              </span>
             )}
           </div>
           <Button
