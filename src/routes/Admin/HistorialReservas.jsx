@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
+import { MainContentHistorialReservas } from "../../components/MainContentHistorialReservas/MainContentHistorialReservas"
+import './HistorialReservas.css'
 
 export const HistorialReservas = () => {
   return (
-    <div>HistorialReservas</div>
-  )
-}
+    <>
+      <div className="main-content-historialreservas">
+        <MainContentHistorialReservas />
+      </div>
+    </>
+  );
+};

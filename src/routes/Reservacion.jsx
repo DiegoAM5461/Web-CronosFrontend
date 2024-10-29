@@ -186,7 +186,7 @@ export const Reservacion = () => {
               <input
                 type="text"
                 id="clientId"
-                placeholder="ID Cliente"
+                placeholder="Dni"
                 value={formData.clientId}
                 onChange={handleInputChange}
               />

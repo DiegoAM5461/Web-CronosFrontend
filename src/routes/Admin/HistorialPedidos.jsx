@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
+import './HistorialPedidos.css'
 
 export const HistorialPedidos = () => {
   return (
-    <div>HistorialPedidos</div>
-  )
-}
+    <>
+      <div className="main-content-historialpedidos">
+      </div>
+    </>
+  );
+};

@@ -1,0 +1,6 @@
+.main-content-historialreservas {
+    margin-left: 250px; /* Espacio suficiente para no solaparse con el sidebar */
+    flex: 1;
+    box-sizing: border-box;
+    height: 100vh;
+  }
