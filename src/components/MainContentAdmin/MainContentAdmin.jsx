@@ -30,6 +30,34 @@ export const MainContentAdmin = () => {
           <img src="https://via.placeholder.com/60" alt="Mesa 6" />
           <div class="table-label">Mesa 6</div>
         </div>
+        <div class="table-control">
+          <img src="https://via.placeholder.com/60" alt="Mesa 6" />
+          <div class="table-label">Mesa 6</div>
+        </div><div class="table-control">
+          <img src="https://via.placeholder.com/60" alt="Mesa 6" />
+          <div class="table-label">Mesa 6</div>
+        </div><div class="table-control">
+          <img src="https://via.placeholder.com/60" alt="Mesa 6" />
+          <div class="table-label">Mesa 6</div>
+        </div><div class="table-control">
+          <img src="https://via.placeholder.com/60" alt="Mesa 6" />
+          <div class="table-label">Mesa 6</div>
+        </div><div class="table-control">
+          <img src="https://via.placeholder.com/60" alt="Mesa 6" />
+          <div class="table-label">Mesa 6</div>
+        </div><div class="table-control">
+          <img src="https://via.placeholder.com/60" alt="Mesa 6" />
+          <div class="table-label">Mesa 6</div>
+        </div><div class="table-control">
+          <img src="https://via.placeholder.com/60" alt="Mesa 6" />
+          <div class="table-label">Mesa 6</div>
+        </div><div class="table-control">
+          <img src="https://via.placeholder.com/60" alt="Mesa 6" />
+          <div class="table-label">Mesa 6</div>
+        </div><div class="table-control">
+          <img src="https://via.placeholder.com/60" alt="Mesa 6" />
+          <div class="table-label">Mesa 6</div>
+        </div>
       </div>
     </>
   );

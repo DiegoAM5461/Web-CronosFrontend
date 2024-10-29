@@ -1,0 +1,97 @@
+
+.box1pedidos-header {
+    background-color: #4caf50; /* Verde del encabezado principal */
+    color: white;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .menu-icon {
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  .header-title {
+    flex-grow: 1;
+    text-align: left;
+  }
+  
+  .box2pedidos-content {
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .control-header {
+    background-color: #4caf50; /* Verde similar al encabezado */
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .order-images {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .order-images img {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .order-table {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .order-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .order-table th,
+  .order-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  .order-table th {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .order-table tfoot td {
+    font-weight: bold;
+  }
+  
+  .order-action {
+    text-align: right;
+  }
+  
+  .accept-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .accept-button:hover {
+    background-color: #45a049;
+  }
+  
