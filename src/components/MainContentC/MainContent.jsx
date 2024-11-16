@@ -40,16 +40,16 @@ export const MainContent = () => {
           descipcion={
             "Los pickeos de Cronos Restobar ofrecen una variedad de bocadillos perfectos para compartir entre amigos. Desde crocantes alitas de pollo hasta deliciosas papas rústicas con salsas especiales, cada bocado está pensado para complementar la experiencia con sabores intensos y frescos. Ideales para acompañar tus bebidas favoritas mientras disfrutas de un buen momento."
           }
-          direccion={"../../../public/Imagenes/tequeños.jpg"}
-          direccion2={"../../../public/Imagenes/alitas.jpg"}
+          direccion={"/Imagenes/tequeños.jpg"}
+          direccion2={"/Imagenes/alitas.jpg"}
         />
         <InfroCronos
           titulo={"Bebidas"}
           descipcion={
             "En bebidas, Cronos Restobar te invita a disfrutar de una carta variada que incluye cocteles clásicos, cervezas artesanales y refrescantes jugos naturales. Ya sea que prefieras un trago con toques tropicales o algo más suave, encontrarás la opción perfecta para acompañar tus pickeos y hacer que cada visita sea inolvidable."
           }
-          direccion={"../../../public/Imagenes/tequeños.jpg"}
-          direccion2={"../../../public/Imagenes/alitas.jpg"}
+          direccion={"/Imagenes/tequeños.jpg"}
+          direccion2={"/Imagenes/alitas.jpg"}
         />
 
         <section className="container top-products">

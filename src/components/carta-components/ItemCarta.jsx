@@ -1,30 +1,43 @@
-import React, { useState } from "react";
-import "./CartaPrincipal";
-import { useEffect } from "react";
-import { listProducts } from "../../services/ProductServices";
+import React, { useState, useEffect } from "react";
+import { listProductsByCategoryId } from "../../services/ProductServices";
+import './CartaComponent.css'
 
-export const ItemCarta = () => {
-  const [products, setProducts] = useState([]);
+export const ItemCarta = ({ categoryId }) => {
+  const [categoryData, setCategoryData] = useState(null);
 
   useEffect(() => {
-    listProducts()
-      .then((response) => {
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+    if (categoryId) {
+      listProductsByCategoryId(categoryId)
+        .then((response) => {
+          setCategoryData(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching products by category:", error);
+        });
+    }
+  }, [categoryId]);
+
   return (
     <>
-      {products.map((product) => (
-        <div  key={product.id_product} className="item-cartaPrincipal">
-          <div className="item-image-cartaPrincipal"><img src={product.direccionImg}></img></div>
-          <h3>{product.nombre}</h3>
-          <p>Precio desde: {product.precio}</p>
-          <button>Agregar</button>
+      {categoryData && (
+        <div className="items-cartaPrincipal">
+          <div className="container-categoryName">
+            <h2>{categoryData.nombreCategory}</h2>
+          </div>
+          {categoryData.products.map((product) => (
+            <div key={product.productId} className="product-item">
+              <div className="item-image-cartaPrincipal">
+                <img src={product.direccionImg} alt={product.nombre} />
+              </div>
+              <div>
+                <h3>{product.nombre}</h3>
+                <p>Precio desde: {product.precio}</p>
+                <button>Agregar</button>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      )}
     </>
   );
 };

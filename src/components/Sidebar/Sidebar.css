@@ -27,7 +27,7 @@
 }
 
 .name-role {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .nav {
@@ -44,7 +44,7 @@
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
   font-weight: bold;
-  font-size: 2.4rem;
+  font-size: 2rem;
 }
 
 .nav a:hover {
@@ -56,7 +56,7 @@
   cursor: pointer;
   color: white;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2.3rem;
 }
 
 .logout a {

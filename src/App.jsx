@@ -15,6 +15,8 @@ import { Pedidos } from "./routes/Admin/Pedidos";
 import { HistorialPedidos } from "./routes/Admin/HistorialPedidos";
 import { HistorialReservas } from "./routes/Admin/HistorialReservas";
 import { Productos } from "./routes/Admin/Productos";
+import { AdminReservas } from "./routes/Admin/AdminReservas";
+import { AdminUsers } from "./routes/Admin/AdminUsers";
 
 export const App = () => {
   return (
@@ -25,14 +27,15 @@ export const App = () => {
       <Route path="/login" element={<Login />}></Route>
       <Route path="/reservaciones" element={<Reservacion />}></Route>
       <Route path="/registro" element={<Registro />}></Route>
-      {/* Administracion */}
+      {/* Administracion */}  
       <Route path="/administracion" element={<AdminPedidos />}>
         <Route path="mesas" element={<Mesas />}></Route>
         <Route path="pedido" element={<Pedidos />}></Route>
-        <Route path="historial" element={<HistorialPedidos />}></Route>
-        <Route path="reservas" element={<HistorialReservas />}>
-          <Route path="historialReservas" element={<HistorialReservas />}></Route>
-        </Route>
+        <Route path="historialpedidos" element={<HistorialPedidos />}></Route>
+        <Route path="reservas" element={<AdminReservas />}></Route>
+        <Route path="historialreservas" element={<HistorialReservas />}></Route>
+        {/* USUARIOS */}
+        <Route path="adminusers" element={<AdminUsers />}></Route>
         <Route path="productos" element={<Productos />}></Route>
       </Route>
       <Route path="/carta" element={<Carta></Carta>}>

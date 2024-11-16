@@ -1,33 +1,34 @@
-import axios from 'axios';
+// src/services/ReservaService.js
+import axiosInstancePublic from "./axiosInstancePublic";
 
-const CLIENT_API_BASE_URL = 'http://localhost:8080/api/clients';
-const BOXES_API_BASE_URL = 'http://localhost:8080/api/box-cronos';
-const RESERVA_API_BASE_URL = 'http://localhost:8080/api/reservas';
+// Definir las rutas base de la API para cada recurso
+const CLIENT_API_BASE_URL = "/clients";
+const BOXES_API_BASE_URL = "/box-cronos";
+const RESERVA_API_BASE_URL = "/reservas";
 
 // Función para obtener un cliente por ID
 export const getClientById = (clientId) => {
-    return axios.get(`${CLIENT_API_BASE_URL}/${clientId}`);
+    return axiosInstancePublic.get(`${CLIENT_API_BASE_URL}/${clientId}`);
 };
 
 // Función para crear una reserva
 export const createReserva = (reservaData) => {
-    return axios.post(RESERVA_API_BASE_URL, reservaData);
+    return axiosInstancePublic.post(RESERVA_API_BASE_URL, reservaData);
 };
 
 // Función para obtener todos los boxes
 export const getBoxes = () => {
-    return axios.get(BOXES_API_BASE_URL);
+    return axiosInstancePublic.get(BOXES_API_BASE_URL);
 };
 
 // Función para crear un nuevo cliente
 export const createClient = (clientData) => {
-    return axios.post(CLIENT_API_BASE_URL, clientData);
+    return axiosInstancePublic.post(CLIENT_API_BASE_URL, clientData);
 };
 
 // Función para obtener reservas disponibles según la fecha
 export const getAvailableReservations = (fechaReserva) => {
-    return axios.get(`${RESERVA_API_BASE_URL}/disponibles`, {
+    return axiosInstancePublic.get(`${RESERVA_API_BASE_URL}/disponibles`, {
         params: { fechaReserva }
     });
 };
-

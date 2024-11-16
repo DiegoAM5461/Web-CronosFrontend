@@ -1,43 +1,102 @@
-.carta-navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
-    margin: 0;
-    padding-top: 15px;
-  }
-  
-  .carta-navbar li {
-    margin: 0 110px;
-  }
-  
-  .carta-navbar a {
-    text-decoration: none;
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    font-size: 30px;
-  }
-  
-  .divider {
-    color: white;
-    font-size: 30px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    background-color: #fff;
-  }
+.container-navegacion {
+  color: #000;
+}
 
-  .navbar-container {
-    position: relative;
-    z-index: 2; /* Para asegurarse de que esté por encima del contenido */
-  }
-  
-  .carta-principal-container {
-    position: relative;
-    z-index: 3; /* Para asegurarse de que esté por debajo de la barra de navegación */
-    margin-top: 20px; /* Ajusta el margen según necesites */
-  }
-  
-  .carta-general{
-    background-color: black;
-  }
+.carta-general {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Barra de navegación */
+.navbar-container {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.navbarCarta-container {
+  background-color: #000; /* Fondo negro */
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.carta-navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  max-width: 1200px; /* Ancho máximo para un diseño centrado */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.cartaPrincipal-container {
+  display: flex;
+  gap: 20px;
+  max-width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.presentation-principal {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.carta-navbar li {
+  font-weight: bold;
+}
+
+.carta-navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.divider {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0 10px;
+}
+
+.carta-navbar {
+  display: flex;
+  gap: 20px;
+}
+
+.carta-navbar li {
+  list-style: none;
+  font-size: 1.2rem;
+}
+
+.carta-navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.divider {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.productsall-cartaPrincipal {
+  width: 90%;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+
+/* Contenedor de pedidos - ocupa el 20% */
+.pedidosMB-ordenes {
+  width: 27%;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  text-align: center;
+}

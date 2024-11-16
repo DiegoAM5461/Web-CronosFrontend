@@ -1,5 +1,6 @@
-import axios from "axios";
+import axiosInstancePublic from "./axiosInstancePublic";
 
-const REST_API_BASE_URL = 'http://localhost:8080/api/products'
+const PRODUCT_API_BASE_URL = "/products";
 
-export const listProducts = () => axios.get(REST_API_BASE_URL)
+export const listProductsByCategoryId = (categoryId) =>
+  axiosInstancePublic.get(`${PRODUCT_API_BASE_URL}/category/${categoryId}`);

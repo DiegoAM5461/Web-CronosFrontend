@@ -17,8 +17,9 @@ export const Sidebar = () => {
           {/* Para el otro ciclo VERANO LO ES TODO */}
           <NavLink className="mesas" to='mesas'>Mesas</NavLink>
           <NavLink className="pedido" to='pedido'>Pedidos</NavLink>
-          <NavLink className="historial" to='historial'>Historial</NavLink>
+          <NavLink className="historialpedidos" to='historialpedidos'>Historial Pedidos</NavLink>
           <NavLink className="reservas" to='reservas'>Reservas</NavLink>
+          <NavLink className="historialreservas" to='historialreservas'>Historial Reservas</NavLink>
           <NavLink className="productos" to='productos'>Productos</NavLink>
         </div>
         <div className="logout">

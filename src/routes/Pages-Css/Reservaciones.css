@@ -1,125 +1,133 @@
 .reservacion-containerPadre {
-    font-family: "Roboto", sans-serif;
-    background-image: url("../../../public/Imagenes/Fondo.jpg");
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .reservacion-container {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    width: 550px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    position: relative; /* Asegura que el botón "X" se posicione relativo a este contenedor */
-  }
-  
-  .reservacion-container h2 {
-    color: #fff;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 4rem;
-  }
-  .reservacion-container form{
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  font-family: "Roboto", sans-serif;
+  background-image: url("../../../public/Imagenes/Fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  .reservacion-container p {
-    color: #ccc;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-  }
-  
-  .reservacion-form-control {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    font-size: 1.4rem;
-  }
-  
-  .reservacion-form-control input {
-    padding: 8px;
-    font-size: 1.2em;
-    border: none;
-    outline: none;
-    border-radius: 15px;
-    border: #fff solid 2px;
-  }
-  
-  .boton-reservacion {
-    width: 50%;
-    padding: 10px;
-    font-size: 1.1em;
-    background-color: #ff6600;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  .boton-reservacion:hover {
-    background-color: #e65500;
-  }
-  
-  .reservacion-error-message {
-    color: #ff0000;
-    font-size: 14px;
-  }
-  
-  .regresar {
-    font-size: 40px;
-  }
+.reservacion-container {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  width: 550px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  position: relative; /* Asegura que el botón "X" se posicione relativo a este contenedor */
+}
 
-  .reservacion-form-seleccion{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-  }
+.reservacion-container h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 4rem;
+}
+.reservacion-container form {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
-  .boton-submit {
-    width: 80%;
-    padding: 10px;
-    font-size: 1.1em;
-    background-color: #ff6600;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    display: block;
-    margin: 0 auto;
-  }
+.reservacion-container p {
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
 
-  .reservacion-inicio {
-    position: absolute; /* Posiciona en relación con .registro-container */
-    top: 10px; /* Ajusta la posición en la parte superior */
-    right: 20px; /* Ajusta la posición en la parte derecha */
-    font-size: 20px; /* Tamaño de la "X" */
-    font-weight: bold; /* Asegura que se vea claramente */
-    text-decoration: none; /* Elimina el subrayado */
-    color: #ffffff; /* Color de la "X" */
-    background-color: transparent; /* Sin fondo */
-    border: none; /* Sin bordes */
-    cursor: pointer; /* Cambia el cursor para que sea clickeable */
-  }
-  .reservacion-form-seleccion select {
-    font-size: 1.1em; /* Ajusta el tamaño según lo necesites */
-    padding: 5px;
-    border-radius: 10px; 
-  }
+.reservacion-form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: #fff;
+}
 
-  .reservacion-boton-reservacion{
-    width: 40%;
-    height: 40px;
-  }
+.reservacion-form-control input {
+  padding: 8px;
+  font-size: 1.2em;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  border: #fff solid 2px;
+}
+
+.boton-reservacion {
+  width: 50%;
+  padding: 10px;
+  font-size: 1.1em;
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 0 auto;
+}
+
+.boton-reservacion:hover {
+  background-color: #e65500;
+}
+
+.reservacion-error-message {
+  color: #ff0000;
+  font-size: 14px;
+}
+
+.regresar {
+  font-size: 40px;
+}
+
+.reservacion-form-seleccion {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.boton-submit {
+  width: 80%;
+  padding: 10px;
+  font-size: 1.1em;
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 0 auto;
+}
+
+.reservacion-inicio {
+  position: absolute; /* Posiciona en relación con .registro-container */
+  top: 10px; /* Ajusta la posición en la parte superior */
+  right: 20px; /* Ajusta la posición en la parte derecha */
+  font-size: 20px; /* Tamaño de la "X" */
+  font-weight: bold; /* Asegura que se vea claramente */
+  text-decoration: none; /* Elimina el subrayado */
+  color: #ffffff; /* Color de la "X" */
+  background-color: transparent; /* Sin fondo */
+  border: none; /* Sin bordes */
+  cursor: pointer; /* Cambia el cursor para que sea clickeable */
+}
+.reservacion-form-seleccion select {
+  font-size: 1.1em; /* Ajusta el tamaño según lo necesites */
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.reservacion-boton-reservacion {
+  width: 40%;
+  height: 40px;
+}
+
+.reservacion-form-control select {
+  font-size: 1em; /* Aumenta el tamaño del texto */
+  padding: 10px; /* Añade más espacio dentro del selector */
+  border-radius: 10px;
+  width: 100%; /* Ajusta el ancho para que ocupe todo el contenedor */
+}

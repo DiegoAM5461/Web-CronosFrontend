@@ -1,7 +1,6 @@
 .button-submit {
     width: 100%; /* Ajusta el tamaño del contenedor (puedes cambiar este valor según tus necesidades) */
     display: flex;
-    justify-content: center; /* Centrar el botón dentro del contenedor */
     padding: 10px; /* Ajusta el padding del contenedor */
     font-size: 1.4rem;
   }

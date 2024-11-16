@@ -1,10 +1,9 @@
-import { CartaPrincipal } from "../../components/carta-components/CartaPrincipal";
+import React from "react";
 
 export const Bebidas = () => {
   return (
     <>
-    <CartaPrincipal direccionImagen={""}
-    tituloCarta={"Bebidas"}/>
+     
     </>
   );
 };

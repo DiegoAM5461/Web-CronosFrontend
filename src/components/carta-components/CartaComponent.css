@@ -1,0 +1,165 @@
+/* Sección del encabezado */
+.header-cartaPrincipal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.header-contentCarta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Ajustes para la imagen en el encabezado */
+.header-imageCarta {
+  width: 100%;
+  max-width: 250px; /* Ajusta el tamaño máximo aquí */
+  height: auto;
+  background: rgba(200, 200, 200, 0.8);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.header-imageCarta img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.header-cartaPrincipal h1 {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+/* Contenedor principal */
+.carta-principal-container {
+  display: grid;
+  grid-template-columns: 1fr 250px; /* 1fr para ocupar el resto del espacio, y 250px para la orden */
+  gap: 20px; /* Espacio entre los contenedores */
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Contenedor de productos */
+.container-cartaPrincipal {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Para que ocupe todo el espacio asignado */
+}
+
+/* Contenedor de la orden de pedidos */
+.order-cartaPrincipal {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  text-align: center;
+  width: 300px; /* Ancho fijo para la orden */
+  min-height: 100%; /* Asegura que ocupe toda la altura del contenedor */
+}
+
+/* Contenedor de la orden de pedidos */
+.order-cartaPrincipal {
+  grid-column: 3 / 4;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.order-cartaPrincipal h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.order-content-cartaPrincipal {
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  padding: 5px;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+/* Nombre de la categoría */
+.container-categoryName {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+}
+
+/* Estilos para los items */
+.items-cartaPrincipal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-item {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+
+/* Ajustes para las imágenes en los productos */
+.item-image-cartaPrincipal {
+  background: rgba(200, 200, 200, 0.8);
+  width: 100%;
+  max-width: 200px; /* Ajusta el tamaño máximo aquí */
+  height: 230px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-image-cartaPrincipal img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.product-item h3 {
+  margin: 10px 0 5px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.product-item p {
+  margin: 5px 0;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* Botón de agregar */
+button {
+  background-color: #ff6a00;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e55b00;
+}

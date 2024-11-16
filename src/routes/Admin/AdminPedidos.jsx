@@ -8,7 +8,8 @@ export const AdminPedidos = () => {
   const hideElements = [
     "/administracion/mesas",
     "/administracion/pedido",
-    "/administracion/historial",
+    "/administracion/historialpedidos",
+    "/administracion/historialreservas",
     "/administracion/reservas",
     "/administracion/productos",
   ].includes(location.pathname);
