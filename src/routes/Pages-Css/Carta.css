@@ -35,9 +35,9 @@
 }
 
 .cartaPrincipal-container {
+  width: 100%;
   display: flex;
   gap: 20px;
-  max-width: 100%;
   padding: 10px;
   box-sizing: border-box;
 }
@@ -88,15 +88,29 @@
 }
 
 .productsall-cartaPrincipal {
-  width: 90%;
+  width: 1000px;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 8px;
 }
 
 /* Contenedor de pedidos - ocupa el 20% */
 .pedidosMB-ordenes {
-  width: 27%;
+  width: 45%;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 8px;
   text-align: center;
+}
+
+.header-cartaPrincipal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.header-contentCarta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }

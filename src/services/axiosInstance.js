@@ -17,30 +17,4 @@ axiosInstance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Interceptor para manejar expiración del token y renovación usando el refreshToken
-axiosInstance.interceptors.response.use(
-  (response) => response,
-  async (error) => {
-    const originalRequest = error.config;
-    if (error.response && error.response.status === 401 && !originalRequest._retry) {
-      originalRequest._retry = true;
-      const refreshToken = localStorage.getItem("refreshToken");
-      if (refreshToken) {
-        try {
-          const response = await axios.post(`${axiosInstance.defaults.baseURL}/refresh-token`, { refreshToken });
-          const { accessToken: newAccessToken } = response.data;
-          localStorage.setItem("accessToken", newAccessToken);
-          axiosInstance.defaults.headers.Authorization = `Bearer ${newAccessToken}`;
-          originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
-          return axiosInstance(originalRequest); // Reintenta la solicitud original con el nuevo token
-        } catch (error) {
-          console.error("Error al renovar el token:", error);
-          // Opcionalmente, redirige a la página de login si falla la renovación
-        }
-      }
-    }
-    return Promise.reject(error);
-  }
-);
-
 export default axiosInstance;

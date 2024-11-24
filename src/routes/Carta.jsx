@@ -39,7 +39,7 @@ export const Carta = () => {
               <CartaPrincipal
                 tituloCarta={"Bebidas"}
                 direccionImagen={
-                  "/public/Imagenes/BOTELLAS PISCO/Queirolo_Quebranta_(Botella).webp"
+                  "/Imagenes/BOTELLAS PISCO/Queirolo_Quebranta_(Botella).webp"
                 }
               />
             </div>

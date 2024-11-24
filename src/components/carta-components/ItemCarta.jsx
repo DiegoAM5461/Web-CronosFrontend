@@ -29,7 +29,7 @@ export const ItemCarta = ({ categoryId }) => {
               <div className="item-image-cartaPrincipal">
                 <img src={product.direccionImg} alt={product.nombre} />
               </div>
-              <div>
+              <div className="pagarItem">
                 <h3>{product.nombre}</h3>
                 <p>Precio desde: {product.precio}</p>
                 <button>Agregar</button>

@@ -7,9 +7,9 @@ export const Pickeos = () => {
     <>
       <div className="presentation-principal">
         <CartaPrincipal
-          tituloCarta={"Bebidas"}
+          tituloCarta={"Pickeos"}
           direccionImagen={
-            "/public/Imagenes/BOTELLAS PISCO/Queirolo_Quebranta_(Botella).webp"
+            "/Imagenes/PUBLIC_IMAGES/logoCartaPickeos.webp"
           }
         />
       </div>

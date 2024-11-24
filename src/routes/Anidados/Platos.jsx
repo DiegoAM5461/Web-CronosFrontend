@@ -9,7 +9,7 @@ export const Platos = () => {
         <CartaPrincipal
           tituloCarta={"Platos"}
           direccionImagen={
-            "/public/Imagenes/BOTELLAS PISCO/Queirolo_Quebranta_(Botella).webp"
+            "/Imagenes/PUBLIC_IMAGES/logoCartaPlatos.jpeg"
           }
         />
       </div>
