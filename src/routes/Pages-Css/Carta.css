@@ -114,3 +114,32 @@
   align-items: center;
   gap: 20px;
 }
+
+.pagination {
+  margin-left: 590px;
+  display: flex;
+  margin-top: 1rem;
+  gap: 10px; /* Espacio entre los botones */
+}
+
+.page-btn {
+  padding: 10px 20px; /* Ajusta el tamaño de los botones */
+  border: none;
+  background-color: #ff6d0c;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem; /* Tamaño del texto */
+  width: 60px; /* Ancho fijo */
+  text-align: center; /* Centrar el texto */
+}
+
+.page-btn.active {
+  color: white;
+  font-weight: bold;
+}
+
+.page-btn:hover {
+  background-color: #f0ad31;
+  color: white;
+}
+

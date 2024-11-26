@@ -1,5 +1,5 @@
 import React from "react";
-import './CartaComponent.css'
+import "./CartaComponent.css";
 
 export const CartaPrincipal = ({ tituloCarta, direccionImagen }) => {
   return (
