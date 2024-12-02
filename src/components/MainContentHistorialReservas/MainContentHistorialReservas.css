@@ -1,150 +1,153 @@
-.box1reservas-header {
-  background-color: #4caf50; /* Verde del encabezado principal */
-  color: white;
-  padding: 15px;
-  font-size: 24px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.col.py-3 {
+  margin-left: 250px; /* Debe coincidir con el ancho del Sidebar */
+  padding: 20px; /* Espaciado interno */
+  background-color: #f9f9f9; /* Fondo claro para diferenciar */
+  min-height: 100vh; /* Ocupa toda la altura de la ventana */
+  overflow-y: auto; /* Habilita el scroll si el contenido es muy largo */
+  border: 1px solid black; /* Borde negro */
 }
 
-.menu-icon {
-  font-size: 28px;
-  cursor: pointer;
+.hr-content {
+  max-width: 100%;
+  padding: 0 15px;
 }
 
-.header-title {
-  flex-grow: 1;
-  text-align: left;
-}
-
-.box2reservas-content {
-  padding: 20px;
-  background-color: #f0f0f0;
-}
-
-.control-header {
-  background-color: #4caf50; /* Verde similar al encabezado */
-  color: white;
-  padding: 10px;
-  font-size: 30px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.order-images {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.order-images img {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.order-table {
+.hr-card {
   width: 100%;
-  margin-bottom: 20px;
 }
 
-.order-table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.order-table th,
-.order-table td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-  font-size: 20px;
-}
-
-.order-table th {
-  background-color: #4caf50;
-  color: white;
-}
-
-.order-table tfoot td {
-  font-weight: bold;
-}
-
-.order-action {
-  text-align: right;
-}
-
-.accept-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.accept-button:hover {
-  background-color: #45a049;
-}
-
-/* FILTROS */
-
-.search-filter {
-  height: 100px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-.barrabusqueda {
-  display: flex;
-  align-items: center;
-  gap: 1px;
-}
-
-.search-input {
-  padding: 8px;
-  width: 250px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+.hr-card-body h5 {
   font-size: 2rem;
 }
-
-.botonbusqueda {
-  max-width: 100%;
-  padding: 8px 12px;
-  background-color: #4CAF50;
+.hr-card-header {
+  background-color: #207c37;
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.hr-card-header h4 {
+  font-size: 2.1rem;
+}
+
+.hr-title {
+  margin-bottom: 15px;
+}
+
+.hr-filters {
+    font-size: 1.4rem;
+  background-color: #f8f9fa; /* Fondo claro */
+  padding: 10px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  display: flex; /* Usar flexbox para distribuir elementos */
+  flex-wrap: wrap; /* Permitir que los filtros se ajusten en múltiples líneas */
+  gap: 15px; /* Espaciado uniforme entre elementos */
+}
+
+.hr-filters .col-md-3 {
+  flex: 1 1 calc(25% - 15px); /* Ancho flexible con espacio ajustado */
+  min-width: 200px; /* Ancho mínimo para cada filtro */
+}
+
+.hr-filter-input,
+.hr-filter-select {
+  width: 100%; /* Asegura que los inputs usen todo el espacio disponible */
+}
+
+.hr-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* Espaciado entre botones */
+}
+
+.hr-filter-input,
+.hr-filter-select {
+  font-size: 14px; /* Tamaño de fuente más cómodo */
+  border: 1px solid #ced4da;
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hr-filter-input:focus,
+.hr-filter-select:focus {
+  border-color: #28a745; /* Verde al enfocar */
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.4);
+}
+
+.hr-filter-input::placeholder {
+  color: #adb5bd; /* Placeholder gris claro */
+}
+
+.hr-filter-select {
+  background-color: #fff;
+}
+
+.hr-filters .col-md-3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.hr-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* Espaciado entre botones */
+}
+
+.hr-buttons .btn {
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.hr-buttons .btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.hr-buttons .btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.hr-buttons button {
+  min-width: 100px;
+}
+
+.hr-table-responsive {
+  width: 100%;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f2f2f2;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #e8f5e9;
+}
+
+@media (max-width: 768px) {
+  .hr-content {
+    padding: 10px;
+  }
+
+  .hr-filters {
+    flex-direction: column;
+  }
+
+  .hr-filters input,
+  .hr-filters select {
+    margin-bottom: 10px;
+  }
+}
+
+.table-success {
   font-size: 1.5rem;
 }
-
-.botonbusqueda:hover {
-  background-color: #45a049;
-}
-
-.opciones-estado .estado-select {
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 2rem;
-}
-
-.button-filteryclean {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-bottom: 20px;
-  width: 250px;
-  flex-direction: column;
+.table-itemshr tr {
+  font-size: 14px;
 }

@@ -1,12 +1,17 @@
 import React from "react";
-import "./AdminReservas.css";
-import { MainContentAdminReservas } from "../../components/MainContentAdminReservas/MainContentAdminReservas";
+import { Sidebar } from "../../components/Sidebar/Sidebar";
+import { MainContentReservas } from "../../components/MainContentReservas/MainContentReservas";
 
 export const AdminReservas = () => {
   return (
     <>
-      <div className="main-content-adminreservas">
-        <MainContentAdminReservas/>
+      <div className="container-fluid">
+        <div className="row flex-nowrap">
+          {/* Sidebar */}
+          <Sidebar />
+          {/* Contenido */}
+          <MainContentReservas/>
+        </div>
       </div>
     </>
   );

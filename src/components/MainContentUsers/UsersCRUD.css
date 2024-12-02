@@ -1,0 +1,32 @@
+.userR-main-container {
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .userR-card-container {
+    border-radius: 10px;
+  }
+  
+  .userR-input,
+  .userR-select {
+    border-radius: 5px;
+  }
+  
+  .userR-btn {
+    width: 48%;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .table {
+    margin-top: 10px;
+  }
+  
+  .badge {
+    font-size: 0.9rem;
+    padding: 0.4em 0.8em;
+    border-radius: 5px;
+  }
+  

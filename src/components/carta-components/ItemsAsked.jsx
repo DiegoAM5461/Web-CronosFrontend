@@ -1,111 +1,173 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import {
-  removeProductFromOrder,
   updateProductQuantityInOrder,
-  getOrderDetails,
+  deleteOrdersDetails,
 } from "../../services/OrdersDetailsService";
-import { confirmOrder } from "../../services/OrdersService"; // Confirmar pedido
+import { getOrdersByBox, getOrdersByTable } from "../../services/OrdersService";
 import "./CartaComponent.css";
-
+//Checkpoint 1
 export const ItemsAsked = ({ ordersId, refreshCart, clearOrder }) => {
-  const [items, setItems] = useState([]);
-  console.log("Orders ID en ItemsAsked:", ordersId);
-
-  // Cargar los productos del carrito
-  const fetchCart = () => {
-    if (ordersId) {
-      getOrderDetails(ordersId)
-        .then((response) => {
-          console.log("Datos del carrito recibidos:", response.data);
-          setItems(response.data); // Actualizar el estado con los detalles
-        })
-        .catch((error) => console.error("Error al cargar el carrito:", error));
-    }
-  };
+  const [orderDetails, setOrderDetails] = useState([]);
+  const [searchParams] = useSearchParams();
+  const boxId = searchParams.get("boxId");
+  const tableCronosId = searchParams.get("tableCronosId");
 
   useEffect(() => {
-    fetchCart();
-  }, [ordersId]);
+    const fetchOrderDetails = async () => {
+      try {
+        let response;
+        if (boxId) {
+          response = await getOrdersByBox(boxId);
+        } else if (tableCronosId) {
+          response = await getOrdersByTable(tableCronosId);
+        } else {
+          console.error("No se encontró boxId ni tableCronosId en la URL");
+          return;
+        }
 
-  const handleIncrement = (item) => {
-    const updatedDetails = {
-      ...item,
-      quantity: item.quantity + 1,
-      subtotal: (item.quantity + 1) * item.price,
+        // Filtrar por estados permitidos en el frontend
+        const estadosPermitidos = ["PENDIENTE", "CONFIRMADO"];
+        const mappedDetails = response.data
+          .filter((order) => estadosPermitidos.includes(order.ordersEstado))
+          .flatMap((order) =>
+            order.ordersDetails.map((detail) => ({
+              ordersDetailsId: detail.ordersDetailsId,
+              ordersId: order.ordersId,
+              productImage:
+                detail.productImage || "https://via.placeholder.com/60",
+              productName: detail.productName,
+              quantity: detail.quantity,
+              price: detail.price,
+              subtotal: detail.subtotal,
+            }))
+          );
+
+        setOrderDetails(mappedDetails);
+      } catch (error) {
+        console.error("Error al obtener detalles del pedido:", error);
+      }
     };
-    updateProductQuantityInOrder(item.ordersDetailsId, updatedDetails)
-      .then(() => fetchCart()) // Refrescar el carrito después de incrementar
-      .catch((error) => console.error("Error al incrementar cantidad:", error));
-  };
 
-  const handleDecrement = (item) => {
-    if (item.quantity > 1) {
-      const updatedDetails = {
-        ...item,
-        quantity: item.quantity - 1,
-        subtotal: (item.quantity - 1) * item.price,
-      };
-      updateProductQuantityInOrder(item.ordersDetailsId, updatedDetails)
-        .then(() => fetchCart()) // Refrescar el carrito después de decrementar
-        .catch((error) =>
-          console.error("Error al decrementar cantidad:", error)
-        );
+    fetchOrderDetails();
+  }, [boxId, tableCronosId]);
+
+  const handleIncrement = async (item) => {
+    try {
+      await updateProductQuantityInOrder(item.ordersDetailsId, {
+        quantity: item.quantity + 1,
+      });
+
+      // Actualiza localmente mientras `refreshCart` sincroniza.
+      setOrderDetails((prev) =>
+        prev.map((detail) =>
+          detail.ordersDetailsId === item.ordersDetailsId
+            ? {
+                ...detail,
+                quantity: detail.quantity + 1,
+                subtotal: (detail.quantity + 1) * detail.price,
+              }
+            : detail
+        )
+      );
+
+      refreshCart();
+    } catch (error) {
+      console.error("Error al incrementar la cantidad:", error);
     }
   };
 
-  const handleRemove = (item) => {
-    removeProductFromOrder(ordersId, item.productId, item.quantity)
-      .then(() => fetchCart()) // Refrescar el carrito después de eliminar un producto
-      .catch((error) => console.error("Error al eliminar producto:", error));
+  const handleDecrement = async (item) => {
+    if (item.quantity > 1) {
+      try {
+        await updateProductQuantityInOrder(item.ordersDetailsId, {
+          quantity: item.quantity - 1,
+        });
+
+        // Actualiza localmente mientras `refreshCart` sincroniza.
+        setOrderDetails((prev) =>
+          prev.map((detail) =>
+            detail.ordersDetailsId === item.ordersDetailsId
+              ? {
+                  ...detail,
+                  quantity: detail.quantity - 1,
+                  subtotal: (detail.quantity - 1) * detail.price,
+                }
+              : detail
+          )
+        );
+
+        refreshCart();
+      } catch (error) {
+        console.error("Error al disminuir la cantidad:", error);
+      }
+    }
   };
 
-  const handleConfirmOrder = () => {
-    confirmOrder(ordersId)
-      .then(() => {
-        alert("Pedido confirmado exitosamente.");
+  const handleRemove = async (item) => {
+    try {
+      await deleteOrdersDetails(item.ordersDetailsId);
+
+      // Actualiza localmente mientras `refreshCart` sincroniza.
+      setOrderDetails((prev) =>
+        prev.filter((detail) => detail.ordersDetailsId !== item.ordersDetailsId)
+      );
+
+      if (orderDetails.length === 1) {
         clearOrder();
-      })
-      .catch((error) => console.error("Error al confirmar el pedido:", error));
+      }
+
+      refreshCart();
+    } catch (error) {
+      console.error("Error al eliminar el producto:", error);
+    }
   };
 
-  const total = items.reduce((acc, item) => acc + item.subtotal, 0);
+  const total = orderDetails.reduce((acc, item) => acc + item.subtotal, 0);
 
   return (
     <div className="order-container">
-      <h2>Tu Pedido</h2>
-      <div className="order-items">
-        {items.map((item) => (
-          <div key={item.ordersDetailsId} className="order-item">
-            <img
-              src={item.productImage || "https://via.placeholder.com/50"}
-              alt={item.productName}
-              className="item-image"
-            />
-            <div className="item-details">
-              <h3>{item.productName}</h3>
-              <p>${item.price.toFixed(2)}</p>
-              <div className="item-controls">
-                <button onClick={() => handleDecrement(item)}>-</button>
-                <span>{item.quantity}</span>
-                <button onClick={() => handleIncrement(item)}>+</button>
+      {orderDetails.length === 0 ? (
+        <div className="order-empty">
+          <p>No hay productos en el carrito.</p>
+        </div>
+      ) : (
+        <>
+          <h2>Tu Carrito</h2>
+          <div className="order-items">
+            {orderDetails.map((item) => (
+              <div key={item.ordersDetailsId} className="order-item">
+                <img
+                  src={item.productImage}
+                  alt={item.productName}
+                  className="item-image"
+                />
+                <div className="item-details">
+                  <h3>{item.productName}</h3>
+                  <div className="item-controls">
+                    <button onClick={() => handleDecrement(item)}>-</button>
+                    <span>{item.quantity}</span>
+                    <button onClick={() => handleIncrement(item)}>+</button>
+                  </div>
+                </div>
+                <div className="item-subtotal">
+                  <p>Precio: S/{item.price.toFixed(2)}</p>
+                  <p>Subtotal: S/{item.subtotal.toFixed(2)}</p>
+                </div>
+                <button
+                  onClick={() => handleRemove(item)}
+                  className="removeItem-button"
+                >
+                  🗑️
+                </button>
               </div>
-              <p>Subtotal: ${item.subtotal.toFixed(2)}</p>
-            </div>
-            <button
-              onClick={() => handleRemove(item)}
-              className="removeItem-button"
-            >
-              🗑️
-            </button>
+            ))}
           </div>
-        ))}
-      </div>
-      <div className="order-summary">
-        <h3>Total: ${total.toFixed(2)}</h3>
-        <button onClick={handleConfirmOrder} className="checkout-button">
-          Confirmar Pedido
-        </button>
-      </div>
+          <div className="order-summary">
+            <h3>Total: S/{total.toFixed(2)}</h3>
+          </div>
+        </>
+      )}
     </div>
   );
 };

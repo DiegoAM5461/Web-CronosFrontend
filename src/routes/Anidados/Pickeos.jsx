@@ -1,25 +1,13 @@
 import React from "react";
-import { CartaPrincipal } from "../../components/carta-components/CartaPrincipal";
-import { ContItems } from "../../components/carta-components/ContItems";
-import { ItemsAsked } from "../../components/carta-components/ItemsAsked";
+import { PedidosCarta } from "../../components/carta-components/PedidosCarta";
+import { HeaderCarta } from "../../components/carta-components/HeaderCarta";
 
-export const Pickeos = ({ ordersId, refreshCart }) => {
+export const Pickeos = () => {
   return (
     <>
-      <div className="presentation-principal">
-        <CartaPrincipal
-          tituloCarta={"Pickeos"}
-          direccionImagen={"/Imagenes/PUBLIC_IMAGES/logoCartaPickeos.webp"}
-        />
-      </div>
-      <div className="cartaPrincipal-container">
-        <div className="productsall-cartaPrincipal">
-          <ContItems categoryId={15} ordersId={ordersId} refreshCart={refreshCart} />
-        </div>
-        <div className="pedidosMB-ordenes">
-          <ItemsAsked ordersId={ordersId} />
-        </div>
-      </div>
+      <HeaderCarta title="Pickeos" imageUrl="https://blog.sanfernando.pe/wp-content/uploads/2023/07/alitas-bbq-1024x683.jpg" />
+      <PedidosCarta categories={[15]} />
     </>
   );
 };
+

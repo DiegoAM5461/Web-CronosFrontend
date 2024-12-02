@@ -1,129 +1,119 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { NavLink, Outlet, useLocation, useSearchParams } from "react-router-dom";
 import { Footer } from "../components/FooterC/Footer";
 import { Header } from "../components/HeaderC/Header";
-import { NavLink, Outlet, useLocation } from "react-router-dom";
-import { CartaPrincipal } from "../components/carta-components/CartaPrincipal";
-import { ContItems } from "../components/carta-components/ContItems";
-import { ItemsAsked } from "../components/carta-components/ItemsAsked";
-import { createOrder, getCart } from "../services/OrdersService";
 import "./Pages-Css/Carta.css";
+import { ItemsShow } from "../components/carta-components/ShowComponentsCarta/ItemsShow";
 
 export const Carta = () => {
   const location = useLocation();
-  const hideElements = ["/carta/pickeos", "/carta/platos"].includes(location.pathname);
+  const [searchParams] = useSearchParams();
+  const boxId = searchParams.get("boxId");
+  const tableCronosId = searchParams.get("tableCronosId");
 
-  const [ordersId, setOrderId] = useState(null);
-  const [cartItems, setCartItems] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
+  const hideElements = [
+    "/carta/pickeos",
+    "/carta/platos",
+    "/carta/bebidas",
+  ].includes(location.pathname);
 
-  const initializeOrder = async () => {
-    try {
-      const storedOrderId = localStorage.getItem("ordersId");
-      if (storedOrderId) {
-        setOrderId(storedOrderId);
-        await fetchCart(storedOrderId);
-      } else {
-        const response = await createOrder({ boxId: 1, tableCronosId: null });
-        const newOrderId = response.data.ordersId;
-        setOrderId(newOrderId);
-        localStorage.setItem("ordersId", newOrderId);
-        await fetchCart(newOrderId);
-      }
-    } catch (error) {
-      console.error("Error al inicializar el pedido:", error);
-      setErrorMessage("No se pudo inicializar el pedido. Por favor, recarga la página.");
-    }
-  };
-
-  const fetchCart = async (currentOrderId) => {
-    try {
-      const response = await getCart(currentOrderId || ordersId);
-      setCartItems(response.data.details || []);
-    } catch (error) {
-      console.error("Error al obtener el carrito:", error);
-      setErrorMessage("No se pudo obtener el carrito. Inténtalo más tarde.");
-    }
-  };
-
-  const clearOrder = () => {
-    localStorage.removeItem("ordersId");
-    setOrderId(null);
-    setCartItems([]);
-  };
-
-  useEffect(() => {
-    initializeOrder();
-  }, []);
-
-  const refreshCart = () => fetchCart();
-
-  const categories = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 3;
-  const totalPages = Math.ceil(categories.length / itemsPerPage);
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentCategories = categories.slice(indexOfFirstItem, indexOfLastItem);
-
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  // Generar parámetros para los enlaces
+  const params = boxId
+    ? `?boxId=${boxId}`
+    : tableCronosId
+    ? `?tableCronosId=${tableCronosId}`
+    : "";
 
   return (
-    <div className="carta-general">
+    <>
       <Header />
-      <div className="navbarCarta-container">
-        <ul className="carta-navbar">
-          <li><NavLink to="pickeos">Pickeos</NavLink></li>
-          <li className="divider">|</li>
-          <li><NavLink to="platos">Platos</NavLink></li>
-          <li className="divider">|</li>
-          <li><NavLink to="bebidas">Bebidas</NavLink></li>
-        </ul>
-      </div>
-      <Outlet />
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
-      {!hideElements && ordersId && (
-        <>
-          <div className="presentation-principal">
-            <CartaPrincipal
-              tituloCarta={"Bebidas"}
-              direccionImagen={"https://i.blogs.es/9bf91c/pexels-isabella-mendes-107313-340996/1366_2000.jpg"}
-            />
-          </div>
-          <div className="pagination">
-            {[...Array(totalPages).keys()].map((page) => (
+      <div className="carta-general">
+        <div className="navbarCarta-container">
+          <ul className="carta-navbar">
+            <li>
+              <NavLink to={`pickeos${params}`}>Pickeos</NavLink>
+            </li>
+            <li className="divider">|</li>
+            <li>
+              <NavLink to={`platos${params}`}>Platos</NavLink>
+            </li>
+            <li className="divider">|</li>
+            <li>
+              <NavLink to={`bebidas${params}`}>Bebidas</NavLink>
+            </li>
+          </ul>
+        </div>
+        {!hideElements && (
+          <>
+            <div
+              id="carouselExampleInterval"
+              className="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="5000"
+            >
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img
+                    src="https://cuberspremium.com/wp-content/uploads/2024/10/receta-coctel-pisco-sour.jpg"
+                    className="d-block w-100"
+                    alt="Bebidas"
+                  />
+                  <div className="carousel-caption d-none d-md-block">
+                    <h5>Bebidas</h5>
+                  </div>
+                </div>
+                <div className="carousel-item">
+                  <img
+                    src="https://cdn.bolivia.com/gastronomia/2012/11/13/arroz-chaufa-con-pollo-3497-1.jpg"
+                    className="d-block w-100"
+                    alt="Platos"
+                  />
+                  <div className="carousel-caption d-none d-md-block">
+                    <h5>Platos</h5>
+                  </div>
+                </div>
+                <div className="carousel-item">
+                  <img
+                    src="https://puertovelero.net/wp-content/uploads/2020/07/CHICHARRON-POLLO.jpg"
+                    className="d-block w-100"
+                    alt="Pickeos"
+                  />
+                  <div className="carousel-caption d-none d-md-block">
+                    <h5>Pickeos</h5>
+                  </div>
+                </div>
+              </div>
               <button
-                key={page + 1}
-                className={`page-btn ${currentPage === page + 1 ? "active" : ""}`}
-                onClick={() => paginate(page + 1)}
+                className="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev"
               >
-                {page + 1}
+                <span
+                  className="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span className="visually-hidden">Previous</span>
               </button>
-            ))}
-          </div>
-          <div className="cartaPrincipal-container">
-            <div className="productsall-cartaPrincipal">
-              {currentCategories.map((categoryId) => (
-                <ContItems
-                  key={categoryId}
-                  categoryId={categoryId}
-                  orderId={ordersId}
-                  setOrderId={setOrderId}
-                  refreshCart={refreshCart}
-                />
-              ))}
+              <button
+                className="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next"
+              >
+                <span
+                  className="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span className="visually-hidden">Next</span>
+              </button>
             </div>
-            <div className="pedidosMB-ordenes">
-              <ItemsAsked
-                ordersId={ordersId}
-                items={cartItems}
-                refreshCart={refreshCart}
-                clearOrder={clearOrder}
-              />
-            </div>
-          </div>
-        </>
-      )}
+            <ItemsShow />
+          </>
+        )}
+        <Outlet />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };

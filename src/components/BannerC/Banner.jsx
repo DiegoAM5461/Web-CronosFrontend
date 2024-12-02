@@ -1,6 +1,6 @@
 import './Banner.css'
 import { Enlaces } from '../Enlaces/Enlaces'
-
+// Checkpoint
 export const Banner = () => {
   return (
     <>

@@ -5,7 +5,6 @@ import { useState } from "react";
 import axios from "axios";
 
 export const Login = () => {
-
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -13,28 +12,29 @@ export const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+  
     try {
       // Llamada a la API para autenticar al usuario
       const response = await axios.post("http://localhost:8080/auth/login", {
         username,
         password,
       });
-
-      // Destructura el response.data para extraer accessToken y refreshToken
-      const { token} = response.data;
-
-      // Almacenar los tokens en localStorage
+  
+      // Destructura los datos necesarios del response
+      const { token, username: storedUsername } = response.data;
+  
+      // Almacenar el token y el nombre del usuario en localStorage
       localStorage.setItem("accessToken", token);
-
+      localStorage.setItem("username", storedUsername); // Guarda el nombre del usuario
+  
       // Redirigir al usuario a la página de administración o dashboard
       navigate("/administracion");
-
     } catch (err) {
       // Si hay un error, muestra un mensaje
       setError("Nombre de usuario o contraseña incorrectos");
     }
   };
+  
 
   return (
     <div className="main-container">

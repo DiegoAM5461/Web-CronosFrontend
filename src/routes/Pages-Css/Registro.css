@@ -1,3 +1,4 @@
+/* Estilo principal del contenedor padre */
 .registro-containerPadre {
   font-family: "Roboto", sans-serif;
   background-image: url("../../../public/Imagenes/Fondo.jpg");
@@ -8,98 +9,48 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  color: white;
 }
 
+/* Contenedor del formulario */
 .registro-container {
-  background: rgba(0, 0, 0, 0.8);
-  padding: 10px;
-  border-radius: 10px;
-  width: 550px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  position: relative; /* Asegura que el botón "X" se posicione relativo a este contenedor */
+  background: linear-gradient(to bottom, #000000, #2c2c2c); /* Gradiente negro */
+  padding: 30px;
+  border-radius: 15px;
+  width: 400px;
 }
 
+/* Estilo del título */
 .registro-container h2 {
-  color: #fff;
-  text-align: center;
-  margin-bottom: 5px;
-  font-size: 4rem;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.registro-container p {
-  color: #ccc;
-  text-align: center;
-  margin-bottom: 20px;
+/* Input group text en negro */
+.input-group-text {
+  background-color: #000000; /* Fondo negro */
+  color: white; /* Texto en blanco para contraste */
 }
 
-.form-control {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-  margin: 20px;
-}
-
-.form-control label {
-  color: #fff;
-  font-size: 15px;
-}
-
-.form-control input {
-  padding: 10px;
-  font-size: 1.2em;
+/* Botón Create Account */
+button.btn-warning {
+  background-color: #ffa500;
   border: none;
-  border-radius: 5px;
-  outline: none;
+  font-size: 1.1rem;
 }
 
-.checkbox-container {
-  display: flex;
-  align-items: center;
-  color: #ccc;
-  font-size: 0.9em;
-  margin-bottom: 10px;
+/* Botón Cancel */
+button.btn-secondary {
+  font-size: 1.1rem;
 }
 
-.checkbox-container input {
-  margin-right: 10px;
-}
+/* Ajuste responsivo */
+@media (max-width: 576px) {
+  .registro-container {
+    width: 90%;
+  }
 
-.boton-registrar {
-  width: 50%;
-  padding: 10px;
-  font-size: 1.3em;
-  background-color: #ff6600;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  display: block;
-}
-
-.boton-registrar:hover {
-  background-color: #e65500;
-}
-
-.error-message {
-  color: #ff0000;
-  font-size: 14px;
-}
-
-.regresar {
-  font-size: 30px;
-}
-
-.regresar-inicio {
-  position: absolute; /* Posiciona en relación con .registro-container */
-  top: 10px; /* Ajusta la posición en la parte superior */
-  right: 20px; /* Ajusta la posición en la parte derecha */
-  font-size: 24px; /* Tamaño de la "X" */
-  font-weight: bold; /* Asegura que se vea claramente */
-  text-decoration: none; /* Elimina el subrayado */
-  color: #ffffff; /* Color de la "X" */
-  background-color: transparent; /* Sin fondo */
-  border: none; /* Sin bordes */
-  cursor: pointer; /* Cambia el cursor para que sea clickeable */
+  .registro-container h2 {
+    font-size: 1.5rem;
+  }
 }

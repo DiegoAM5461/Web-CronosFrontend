@@ -1,0 +1,101 @@
+/* Contenedor principal del contenido */
+.col.py-3 {
+  margin-left: 250px; /* Debe coincidir con el ancho del Sidebar */
+  padding: 20px; /* Espaciado interno */
+  background-color: #f9f9f9; /* Fondo claro para diferenciar */
+  min-height: 100vh; /* Ocupa toda la altura de la ventana */
+  overflow-y: auto; /* Habilita el scroll si el contenido es muy largo */
+  border: 1px solid black; /* Borde negro */
+}
+
+/* Encabezado */
+.box1-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid black; /* Borde negro */
+}
+
+.box1-header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.box1-header i {
+  color: #ffd700;
+}
+
+.adminMesas-container {
+  background-color: #f1f5f9; /* Fondo claro para el contenedor */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.adminMesas-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50; /* Azul oscuro */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.adminMesas-item {
+  display: flex;
+  justify-content: center;
+}
+
+.adminMesas-card {
+  background-color: #ffffff; /* Fondo blanco */
+  border: 1px solid #e0e0e0; /* Borde gris claro */
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.adminMesas-pending .adminMesas-card {
+  background-color: #ffe8a1; /* Amarillo suave para PENDIENTE */
+  border: 1px solid #ffcc66; /* Borde amarillo */
+}
+
+.adminMesas-default .adminMesas-card {
+  background-color: #ffffff; /* Fondo blanco para los que no están en PENDIENTE */
+}
+
+.adminMesas-card:hover {
+  transform: translateY(-5px);
+  background-color: #fffae6; /* Color hover más claro */
+}
+
+.adminMesas-img {
+  max-height: 120px;
+  max-width: 120px;
+  border-radius: 50%; /* Forma circular */
+  object-fit: cover;
+  border: 2px solid #e0e0e0; /* Borde alrededor de las imágenes */
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.adminMesas-card:hover .adminMesas-img {
+  transform: scale(1.1); /* Efecto de zoom en la imagen al hover */
+}
+
+.adminMesas-card div {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #34495e; /* Gris oscuro */
+}
+
+.adminMesas-card div:last-child {
+  font-size: 0.9rem;
+  color: #7f8c8d; /* Gris suave */
+}

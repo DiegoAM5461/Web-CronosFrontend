@@ -1,9 +1,7 @@
-/* Sección del encabezado */
-
-/* Ajustes para la imagen en el encabezado */
+/* Encabezado */
 .header-imageCarta {
   width: 100%;
-  max-width: 400px; /* Ajusta el tamaño máximo aquí */
+  max-width: 400px;
   height: auto;
   background: rgba(200, 200, 200, 0.8);
   border-radius: 8px;
@@ -22,20 +20,11 @@
 .header-cartaPrincipal h1 {
   color: #fff;
   font-size: 2.5rem;
+  text-align: center;
+  margin-top: 10px;
 }
 
-/* Contenedor principal */
-.carta-principal-container {
-  display: grid;
-  grid-template-columns: 1fr 250px; /* 1fr para ocupar el resto del espacio, y 250px para la orden */
-  gap: 20px; /* Espacio entre los contenedores */
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-/* Contenedor de productos */
+/* Contenedor Principal */
 .container-cartaPrincipal {
   background: rgba(0, 0, 0, 0.6);
   padding: 20px;
@@ -47,13 +36,12 @@
   justify-content: center;
 }
 
-/* Contenedor de la orden de pedidos */
+/* Contenedor de Pedidos */
 .order-cartaPrincipal {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 8px;
   text-align: center;
-  width: 300px; /* Ancho fijo para la orden */
-  min-height: 100%; /* Asegura que ocupe toda la altura del contenedor */
+  width: 300px;
 }
 
 .order-cartaPrincipal h2 {
@@ -69,18 +57,20 @@
   font-size: 20px;
 }
 
-/* Nombre de la categoría */
+/* Categoría */
 .container-categoryName {
   width: 100%;
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #fff;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 8px;
+  padding: 10px 0;
+  margin-bottom: 10px;
 }
 
-/* Estilos para los items */
+/* Productos */
 .items-cartaPrincipal {
   display: flex;
   flex-wrap: wrap;
@@ -97,14 +87,17 @@
   flex-direction: column;
   align-items: center;
   width: 250px;
-  height: auto;
 }
 
-/* Ajustes para las imágenes en los productos */
+.product-item button {
+  font-size: 1.3rem;
+  border-radius: 10px;
+}
+
 .item-image-cartaPrincipal {
   background: rgba(200, 200, 200, 0.8);
   width: 100%;
-  max-width: 250px; /* Ajusta el tamaño máximo aquí */
+  max-width: 250px;
   height: 250px;
   border-radius: 8px;
   overflow: hidden;
@@ -123,6 +116,7 @@
   margin: 10px 0 5px;
   font-size: 1.8rem;
   color: #333;
+  height: 50px;
 }
 
 .product-item p {
@@ -131,7 +125,7 @@
   color: #333;
 }
 
-/* Botón de agregar */
+/* Botón */
 button {
   background-color: #ff6a00;
   color: white;
@@ -146,30 +140,36 @@ button:hover {
   background-color: #e55b00;
 }
 
+/* Orden de Pedidos */
+
 .order-container {
+  margin-top: 110px;
+  margin-left: 40px;
   color: #000;
-  width: 90%;
-  margin: auto;
+  width: 100%;
+  max-width: 480px;
   background: #fff;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .order-container h2 {
   color: #000;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Configuración de los items en el pedido */
 .order-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 70px 1fr auto auto;
   align-items: center;
-  gap: 15px;
-  padding: 15px;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background: #f9f9f9;
-  position: relative; /* Para posicionar el botón de borrar */
 }
 
 .item-image {
@@ -179,106 +179,67 @@ button:hover {
   object-fit: cover;
 }
 
-/* Detalles del producto */
 .item-details {
+  margin-left: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
+  gap: 5px;
 }
 
-.item-info {
-  display: flex;
-  flex-direction: column; /* Agrupa el nombre y el precio */
-  margin-bottom: 10px; /* Espacio entre el bloque superior e inferior */
-}
-
-.item-info h3 {
-  margin: 0;
-  font-size: 1.8rem;
+.item-details h3 {
+  font-size: 1.5rem;
   font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
 }
 
-.item-info p {
-  margin: 5px 0 0;
+.item-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-controls span {
+  font-size: 2rem;
+}
+
+.item-controls button {
+  background: #ff6a00;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
   font-size: 1.5rem;
 }
 
-/* Controles del producto */
-.item-controlsAsked {
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Espacio entre botones y cantidad */
-}
-
-.subtotalItems {
-  text-align: right; /* Alinea el texto dentro del subtotal */
-  font-size: 1.6rem; /* Tamaño de texto */
-  font-weight: bold;
-}
-
-.item-controlsAsked button {
-  background: #ff6a00;
-  color: white;
-  border: none;
-  border-radius: 50%; /* Botones redondeados */
-  width: 32px; /* Reducir tamaño */
-  height: 32px; /* Reducir tamaño */
-  cursor: pointer;
-  font-size: 2rem; /* Tamaño del texto reducido */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.item-controlsAsked button:hover {
+.item-controls button:hover {
   background: #e55b00;
 }
 
-.decrementItems,
-.incrementItems {
-  background: #ff6a00;
-  color: white;
-  border: none;
-  border-radius: 50%; /* Botones completamente redondeados */
-  width: 20px; /* Tamaño más pequeño */
-  height: 20px; /* Tamaño más pequeño */
-  cursor: pointer;
-  font-size: 0.75rem; /* Tamaño reducido del texto */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.decrementItems:hover,
-.incrementItems:hover {
-  background: #e55b00; /* Color al pasar el mouse */
-}
-
 .item-subtotal {
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin-left: auto; /* Empuja el subtotal hacia la derecha */
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-size: 1.3rem;
 }
 
-/* Botón para borrar el producto */
+.item-subtotal p {
+  margin: 0;
+}
+
 .removeItem-button {
-  position: absolute; /* Posiciona el botón relativo al contenedor */
-  top: 10px; /* Margen superior */
-  right: 10px; /* Margen derecho */
   background: #ff0000;
   color: white;
   border: none;
-  border-radius: 50%; /* Botón redondeado */
-  padding: 5px;
-  cursor: pointer;
-  width: 40px; /* Tamaño consistente */
+  border-radius: 50%;
+  width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .removeItem-button:hover {
@@ -288,12 +249,10 @@ button:hover {
 .order-summary {
   text-align: center;
   margin-top: 20px;
-  padding: 10px;
-  border-top: 1px solid #ddd;
 }
 
 .order-summary h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 10px;
 }
 
@@ -305,9 +264,9 @@ button:hover {
   border-radius: 8px;
   cursor: pointer;
   font-size: 1.2rem;
+  width: 100%;
 }
 
 .checkout-button:hover {
   background: #333;
 }
-

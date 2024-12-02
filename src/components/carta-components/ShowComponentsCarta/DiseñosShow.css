@@ -1,0 +1,124 @@
+.items-carta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 40px;
+}
+
+.category-name-container {
+  color: #f8f8f8;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.category-name-container h2{
+    font-size: 50px;
+  }
+
+.products-grid-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Adaptable al espacio */
+  gap: 20px;
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  max-width: 1200px; /* Ancho máximo opcional para centrar el contenido */
+}
+
+.product-card {
+  width: 100%;
+  height: 0;
+  padding-bottom: 150%; /* Relación de aspecto 2:3 */
+  perspective: 1000px; /* Necesario para el efecto 3D */
+}
+
+.product-card-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.product-card:hover .product-card-inner {
+  transform: rotateY(180deg);
+}
+
+.product-card-front,
+.product-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.product-card-front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f9fc; /* Fondo suave */
+    color: #333; /* Texto oscuro */
+    transform: rotateY(180deg);
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    text-align: center;
+  }
+  
+  .product-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222; /* Título más destacado */
+    margin-bottom: 10px;
+  }
+  
+  .product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff; /* Color azul para el precio */
+    margin-bottom: 10px;
+  }
+  
+  .product-description {
+    font-size: 14px;
+    color: #555; /* Texto ligeramente más claro */
+    line-height: 1.5; /* Mejor separación entre líneas */
+  }
+  
+  .product-card-back-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .product-card-back-icons i {
+    font-size: 24px;
+    color: #007bff; /* Íconos azules */
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  .product-card-back-icons i:hover {
+    color: #0056b3; /* Cambia de color al pasar el mouse */
+    transform: scale(1.2); /* Aumenta el tamaño ligeramente */
+  }
+  

@@ -1,12 +1,12 @@
-.main-content{
+.main-contentContacto{
     background-color: #000000f3;
+    padding: 20px;
+    background-color: black;
 }
 
-.main-content {
-    padding: 20px;
-}
 
 .contact-header {
+    color: #fff;
     margin-bottom: 20px;
     font-size: 3rem;
     margin-left: 40px;

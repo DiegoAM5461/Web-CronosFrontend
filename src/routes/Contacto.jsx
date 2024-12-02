@@ -1,13 +1,13 @@
 import { Enlaces } from "../components/Enlaces/Enlaces";
 import { Footer } from "../components/FooterC/Footer";
 import { Header } from "../components/HeaderC/Header";
-import "./Pages-Css/Contacto.css";
+import "./Pages-Css/Contacto.css"
 
 export const Contacto = () => {
   return (
     <>
       <Header />
-      <main className="main-content">
+      <main className="main-contentContacto">
         <div className="contact-header">
           <h1>Contacto</h1>
           <hr className="divider-contact" />

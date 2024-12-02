@@ -3,7 +3,7 @@ import './Contenido.css'
 export const Contenido = () => {
     return (
       <>
-        <main className="main-content">
+        <main className="main-contentNosotros">
           <section className="about" id="nosotros">
             <div className="container">
               <div className="about-text">

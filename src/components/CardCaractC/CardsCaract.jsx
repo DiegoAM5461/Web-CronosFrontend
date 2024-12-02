@@ -1,6 +1,6 @@
 import React from 'react'
 import './CardsCaraact.css'
-
+//CHECKPOINT
 export const CardsCaract = ({ iconoClase, titulo, descripcion }) => {
   return (
     <>

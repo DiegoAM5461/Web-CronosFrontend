@@ -1,8 +1,9 @@
-import { Button } from "../components/ButtonC/Button";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./Pages-Css/Registro.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { createEmployee } from "../services/EmployeeService";
 
 export const Registro = () => {
   const navigate = useNavigate();
@@ -11,156 +12,186 @@ export const Registro = () => {
     employeeId: "",
     nombre: "",
     apellido: "",
-    telefono: "",
     email: "",
+    telefono: "",
     fechaNacimiento: "",
-    contrasena: "",
-    confirmarContrasena: "",
+    estadoEmployee: "ACTIVO"
   });
 
-  const [errors, setErrors] = useState({});
+  const [error, setError] = useState("");
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
+
+    // Validación para DNI (máximo 8 dígitos y numérico)
+    if (id === "employeeId" && (value.length > 8 || isNaN(value))) {
+      return;
+    }
+
+    // Validación para teléfono (máximo 9 dígitos y numérico)
+    if (id === "telefono" && (value.length > 9 || isNaN(value))) {
+      return;
+    }
+
     setFormData({ ...formData, [id]: value });
   };
 
-  const handleRegistroClick = (event) => {
+  const handleRegistroClick = async (event) => {
     event.preventDefault();
+    setError("");
 
-    const newErrors = {};
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail\.com|hotmail\.com|outlook\.com)$/;
-    const phonePattern = /^[0-9]{10}$/;
-    const dniPattern = /^[0-9]{8}$/;
-
-    if (!formData.nombre) newErrors.nombre = "El nombre es obligatorio.";
-    if (!formData.apellido) newErrors.apellido = "El apellido es obligatorio.";
-    if (!formData.telefono) {
-      newErrors.telefono = "El teléfono es obligatorio.";
-    } else if (!phonePattern.test(formData.telefono)) {
-      newErrors.telefono = "El teléfono debe tener exactamente 10 dígitos.";
-    }
-    if (!formData.email) {
-      newErrors.email = "El email es obligatorio.";
-    } else if (!emailPattern.test(formData.email)) {
-      newErrors.email = "El email debe ser un correo válido de Gmail, Hotmail o Outlook.";
-    }
-    if (!formData.employeeId) {
-      newErrors.employeeId = "El DNI es obligatorio.";
-    } else if (!dniPattern.test(formData.employeeId)) {
-      newErrors.employeeId = "El DNI debe tener exactamente 8 dígitos.";
+    // Validaciones simples
+    if (
+      !formData.employeeId ||
+      !formData.nombre ||
+      !formData.apellido ||
+      !formData.email ||
+      !formData.telefono ||
+      !formData.fechaNacimiento
+    ) {
+      setError("Por favor, complete todos los campos.");
+      return;
     }
 
-    // Validación de edad mínima (18 años)
-    if (!formData.fechaNacimiento) {
-      newErrors.fechaNacimiento = "La fecha de nacimiento es obligatoria.";
-    } else {
-      const birthDate = new Date(formData.fechaNacimiento);
-      const currentDate = new Date();
-      let age = currentDate.getFullYear() - birthDate.getFullYear(); // Cambiar a 'let'
-      const monthDifference = currentDate.getMonth() - birthDate.getMonth();
-      const dayDifference = currentDate.getDate() - birthDate.getDate();
-
-      // Ajuste de edad si el cumpleaños de este año aún no ha pasado
-      if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
-        age--;
-      }
-
-      if (age < 18) {
-        newErrors.fechaNacimiento = "Debes tener al menos 18 años.";
-      }
+    // Validación de DNI con exactamente 8 dígitos
+    if (formData.employeeId.length !== 8) {
+      setError("El DNI debe tener exactamente 8 dígitos.");
+      return;
     }
 
-    if (!formData.contrasena) newErrors.contrasena = "La contraseña es obligatoria.";
-    if (!formData.confirmarContrasena) {
-      newErrors.confirmarContrasena = "Confirmar contraseña es obligatorio.";
-    } else if (formData.contrasena !== formData.confirmarContrasena) {
-      newErrors.confirmarContrasena = "Las contraseñas no coinciden.";
+    // Validación de teléfono con exactamente 9 dígitos
+    if (formData.telefono.length !== 9) {
+      setError("El teléfono debe tener exactamente 9 dígitos.");
+      return;
     }
 
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-    } else {
-      setErrors({});
-      navigate("/login");
+    // Validación de fecha de nacimiento (mayor a 18 años)
+    const birthDate = new Date(formData.fechaNacimiento);
+    const currentDate = new Date();
+    let age = currentDate.getFullYear() - birthDate.getFullYear();
+    const monthDifference = currentDate.getMonth() - birthDate.getMonth();
+    const dayDifference = currentDate.getDate() - birthDate.getDate();
+
+    if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
+      age--;
+    }
+
+    if (age < 18) {
+      setError("Debes tener al menos 18 años para registrarte.");
+      return;
+    }
+
+    try {
+      // Llama al servicio para crear el empleado
+      await createEmployee(formData);
+      alert("Cuenta creada exitosamente.");
+      navigate("/login"); // Redirige al login
+    } catch (error) {
+      setError("Error al crear la cuenta. Por favor, intente de nuevo.");
+      console.error(error);
     }
   };
 
   return (
-    <div className="registro-containerPadre">
-      <div className="registro-container">
-        <NavLink className="regresar-inicio" to="/">X</NavLink>
-        <h2>Registro</h2>
-        <p>Esto solo tomará unos minutos</p>
+    <div className="registro-containerPadre d-flex align-items-center justify-content-center">
+      <div className="registro-container card shadow-lg p-4 rounded-4">
+        <h2 className="text-center text-white mb-4">Register</h2>
+        {error && <div className="alert alert-danger">{error}</div>}
         <form>
-          <InputField
-            id="employeeId"
-            placeholder="DNI"
-            value={formData.employeeId}
-            onChange={handleInputChange}
-            error={errors.employeeId}
-            maxLength={8} // Limitar a 8 caracteres
-          />
-          <InputField
-            id="nombre"
-            placeholder="Nombre"
-            value={formData.nombre}
-            onChange={handleInputChange}
-            error={errors.nombre}
-          />
-          <InputField
-            id="apellido"
-            placeholder="Apellido"
-            value={formData.apellido}
-            onChange={handleInputChange}
-            error={errors.apellido}
-          />
-          <InputField
-            id="telefono"
-            placeholder="Teléfono"
-            value={formData.telefono}
-            onChange={handleInputChange}
-            error={errors.telefono}
-            maxLength={10} // Limitar a 10 caracteres
-          />
-          <InputField
-            id="email"
-            type="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleInputChange}
-            error={errors.email}
-          />
-          <InputField
-            id="fechaNacimiento"
-            type="date"
-            placeholder="Fecha de Nacimiento"
-            value={formData.fechaNacimiento}
-            onChange={handleInputChange}
-            error={errors.fechaNacimiento}
-          />
-          <Button
-            className="boton-registrar"
-            title="Registrar"
+          <div className="mb-3 input-group">
+            <span className="input-group-text bg-primary text-white">
+              <i className="bi bi-person-badge"></i>
+            </span>
+            <input
+              type="text"
+              id="employeeId"
+              className="form-control"
+              placeholder="DNI (8 dígitos)"
+              value={formData.employeeId}
+              onChange={handleInputChange}
+              maxLength="8" // Evita ingresar más de 8 caracteres
+            />
+          </div>
+          <div className="mb-3 input-group">
+            <span className="input-group-text bg-primary text-white">
+              <i className="bi bi-person-fill"></i>
+            </span>
+            <input
+              type="text"
+              id="nombre"
+              className="form-control"
+              placeholder="Nombre"
+              value={formData.nombre}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="mb-3 input-group">
+            <span className="input-group-text bg-primary text-white">
+              <i className="bi bi-person-fill"></i>
+            </span>
+            <input
+              type="text"
+              id="apellido"
+              className="form-control"
+              placeholder="Apellido"
+              value={formData.apellido}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="mb-3 input-group">
+            <span className="input-group-text bg-primary text-white">
+              <i className="bi bi-envelope-fill"></i>
+            </span>
+            <input
+              type="email"
+              id="email"
+              className="form-control"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="mb-3 input-group">
+            <span className="input-group-text bg-primary text-white">
+              <i className="bi bi-telephone-fill"></i>
+            </span>
+            <input
+              type="text"
+              id="telefono"
+              className="form-control"
+              placeholder="Teléfono (9 dígitos)"
+              value={formData.telefono}
+              onChange={handleInputChange}
+              maxLength="9" // Evita ingresar más de 9 caracteres
+            />
+          </div>
+          <div className="mb-3 input-group">
+            <span className="input-group-text bg-primary text-white">
+              <i className="bi bi-calendar-fill"></i>
+            </span>
+            <input
+              type="date"
+              id="fechaNacimiento"
+              className="form-control"
+              placeholder="Fecha de Nacimiento"
+              value={formData.fechaNacimiento}
+              onChange={handleInputChange}
+            />
+          </div>
+          <button
+            className="btn btn-warning text-white w-100 mb-3 rounded-pill"
             onClick={handleRegistroClick}
-          />
+          >
+            Create Account
+          </button>
+          <button
+            className="btn btn-secondary w-100 rounded-pill"
+            onClick={() => navigate("/")}
+          >
+            Cancel
+          </button>
         </form>
       </div>
     </div>
   );
 };
-
-const InputField = ({ id, type = "text", placeholder, value, onChange, error, maxLength }) => (
-  <div className="form-control">
-    <label htmlFor={id}></label>
-    <input
-      type={type}
-      id={id}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      maxLength={maxLength} // Aplicar el límite de caracteres
-    />
-    {error && <span className="error-message">{error}</span>}
-  </div>
-);

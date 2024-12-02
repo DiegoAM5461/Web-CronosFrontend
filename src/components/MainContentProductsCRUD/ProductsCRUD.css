@@ -1,0 +1,217 @@
+.products-container {
+  background-color: #f4f4f4;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.products-title {
+  color: #2c3e50;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.products-add-btn {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.products-add-btn:hover {
+  background-color: #2980b9;
+}
+
+.products-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.products-table thead {
+  background-color: #3498db;
+  color: white;
+  text-align: left;
+}
+
+.products-table th,
+.products-table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.products-table tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+.products-table td:nth-child(2), /* Columna Nombre */
+.products-table td:nth-child(3) {
+  /* Columna Descripción */
+  max-width: 130px; /* Remueve el límite máximo de ancho */
+  white-space: normal; /* Permite el salto de línea */
+  word-wrap: break-word; /* Ajusta el texto para evitar desbordamientos */
+  overflow: hidden;
+  text-align: center; /* Alinea el texto a la izquierda */
+  text-overflow: ellipsis;
+}
+
+.products-table td:nth-child(8) {
+  /* Columna Categoría */
+  max-width: 120px; /* Reducimos el tamaño */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.products-table td:nth-child(3) {
+  /* Columna Descripción */
+  max-width: 200px;
+  word-wrap: break-word;
+  white-space: normal;
+  text-align: left; /* Ajustar alineación */
+}
+
+.products-table td:nth-child(7) img {
+  /* Columna Imagen */
+  display: block;
+  width: 80%; /* Expandimos la imagen */
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.products-modal-content {
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.products-cancel-btn {
+  background-color: #7f8c8d;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.products-cancel-btn:hover {
+  background-color: #95a5a6;
+}
+
+.products-save-btn {
+  background-color: #27ae60;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.products-save-btn:hover {
+  background-color: #229954;
+}
+
+
+.modal-content {
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: #ffffff; /* Fondo blanco */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
+  padding: 20px;
+}
+
+.modal-header {
+  border-bottom: 1px solid #eaeaea; /* Línea divisoria */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #7f8c8d;
+}
+
+.btn-close:hover {
+  color: #e74c3c; /* Color rojo al pasar el cursor */
+}
+
+.modal-body {
+  padding: 20px 0;
+}
+
+.modal-body .form-label {
+  font-weight: bold;
+  color: #34495e;
+  margin-bottom: 5px;
+}
+
+.modal-body .form-control,
+.modal-body .form-select {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.modal-body .form-control:focus,
+.modal-body .form-select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.modal-footer {
+  border-top: 1px solid #eaeaea;
+  padding-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-secondary {
+  background-color: #7f8c8d;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #95a5a6;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}

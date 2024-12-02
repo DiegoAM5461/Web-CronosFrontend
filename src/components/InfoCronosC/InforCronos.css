@@ -1,69 +1,63 @@
-/* Contenedor principal como Grid */
-.info-inicio {
-    display: grid;
-    grid-template-columns: 60% 40%; /* Dos columnas, 60% para el texto y 40% para las imágenes */
-    grid-template-rows: auto 1fr; /* Filas automáticas que se ajustan a su contenido */
-    gap: 20px; /* Espacio entre los elementos */
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Contenedor principal */
+.infroC-container {
+    background-color: #121212; /* Fondo oscuro */
     padding: 20px;
-    color: rgb(255, 255, 255);
-    font-family: Arial, sans-serif;
-}
-
-/* Texto (info-text) ocupa la primera columna, fila 1 */
-.info-text {
-    grid-column: 1 / 2; /* Coloca el texto en la primera columna */
-    grid-row: 1 / 2; /* Coloca el texto en la primera fila */
-}
-
-.title-info {
-    font-size: 4rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .infroC-container:hover {
+    transform: scale(1.02); /* Pequeño zoom al pasar el cursor */
+  }
+  
+  /* Títulos */
+  .infroC-title {
+    color: #ffffff;
     font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.descripción-info {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    word-wrap: break-word;
-}
-
-/* Botón personalizado */
-.boton-personalizado {
+    font-size: 5rem;
+  }
+  
+  /* Descripción */
+  .infroC-description {
+    color: #cccccc;
     font-size: 1.5rem;
-    margin-top: 20px;
-}
-
-/* Imagen 1 (colocada en la fila 2, columna 1) */
-.image-infor1 {
-    grid-column: 1 / 2; /* Segunda fila, primera columna */
-    grid-row: 2 / 3;
-    align-self: start; /* Alineada arriba */
-    width: 100%;
-}
-
-.imagen1 {
-    width: 100%;
-    height: 100%;
-    max-width: 50rem;
-    max-height: 27rem;
-    background-color: lightgray;
-    margin-left: 20rem;
-}
-
-/* Imagen 2 (colocada en la primera fila, segunda columna) */
-.image-infor2 {
-    grid-column: 2 / 3; /* Primera fila, segunda columna */
-    grid-row: 1 / 3; /* Ocupa ambas filas para alinearse con el contenido de la izquierda */
-    align-self: start; /* Alineada arriba */
-    width: 100%;
-}
-
-.imagen2 {
-    width: 100%;
+  }
+  
+  /* Imágenes */
+  .infroC-img {
+    max-width: 100%;
     height: auto;
-    background-color: lightgray;
-}
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+  }
+  
+  .infroC-img:hover {
+    transform: scale(1.05); /* Zoom en la imagen al hacer hover */
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Botón */
+  .infroC-text button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .infroC-text button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Efecto de elevación */
+  }
+  
+  /* Transición suave */
+  .infroC-text button,
+  .infroC-img {
+    transition: all 0.3s ease-in-out;
+  }
+  

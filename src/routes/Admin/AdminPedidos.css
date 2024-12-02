@@ -1,9 +1,0 @@
-.admin-container {
-  display: flex;
-  height: 100vh; /* Asegura que el contenedor ocupe toda la pantalla de altura */
-}
-.main-content-admin {
-  margin-left: 250px; /* Espacio suficiente para no solaparse con el sidebar */
-  flex: 1;
-  box-sizing: border-box;
-}
