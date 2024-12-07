@@ -15,7 +15,7 @@ export const Login = () => {
   
     try {
       // Llamada a la API para autenticar al usuario
-      const response = await axios.post("http://localhost:8080/auth/login", {
+      const response = await axios.post("https://shimmering-intuition-production.up.railway.app/auth/login", {
         username,
         password,
       });

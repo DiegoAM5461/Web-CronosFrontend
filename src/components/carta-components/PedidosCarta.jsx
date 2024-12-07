@@ -22,22 +22,24 @@ export const PedidosCarta = ({ categories }) => {
       const params = new URLSearchParams(window.location.search);
       const boxId = params.get("boxId");
       const tableCronosId = params.get("tableCronosId");
-  
+
       if (!boxId && !tableCronosId) {
         setErrorMessage("Debe especificarse un boxId o tableCronosId.");
         return;
       }
-  
+
       // Buscar pedido asociado a boxId o tableCronosId
       const order = await getOrderByBoxOrTable(boxId, tableCronosId);
-  
+
       if (!order) {
         setErrorMessage("No se encontró un pedido pendiente asociado.");
         return;
       }
-  
+
       // Obtener carrito utilizando ordersId
       const cartResponse = await getCart(order.ordersId);
+
+      // Actualiza el estado con los nuevos datos del carrito
       setCartItems(cartResponse.data.details || []);
     } catch (error) {
       console.error("PedidosCarta: Error al refrescar el carrito:", error);

@@ -25,42 +25,42 @@ import { PersistBoxIdOrTableCronosId } from "./components/PersistCronos/PersistB
 
 export const App = () => {
   return (
-    <PersistBoxIdOrTableCronosId>
-      <Routes>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/contacto" element={<Contacto />} />
-        <Route path="/nosotros" element={<Nosotros />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/reservaciones" element={<Reservacion />} />
-        <Route path="/registro" element={<Registro />} />
+      <PersistBoxIdOrTableCronosId>
+        <Routes>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/contacto" element={<Contacto />} />
+          <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/reservaciones" element={<Reservacion />} />
+          <Route path="/registro" element={<Registro />} />
 
-        {/* Administracion */}
-        <Route path="/administracion" element={<AdministracionGeneral />} />
-        <Route path="/administracion/mesas" element={<Mesas />} />
-        <Route path="/administracion/pedido/:id" element={<Pedidos />} />
-        <Route path="/administracion/pedido/" element={<Pedidos />} />
-        <Route
-          path="/administracion/historialpedidos"
-          element={<HistorialPedidos />}
-        />
-        <Route path="/administracion/reservas" element={<AdminReservas />} />
-        <Route
-          path="/administracion/historialreservas"
-          element={<HistorialReservas />}
-        />
-        <Route path="/administracion/adminusers" element={<AdminUsers />} />
-        <Route path="/administracion/productos" element={<Productos />} />
+          {/* Administracion */}
+          <Route path="/administracion" element={<AdministracionGeneral />} />
+          <Route path="/administracion/mesas" element={<Mesas />} />
+          <Route path="/administracion/pedido/:id" element={<Pedidos />} />
+          <Route path="/administracion/pedido/" element={<Pedidos />} />
+          <Route
+            path="/administracion/historialpedidos"
+            element={<HistorialPedidos />}
+          />
+          <Route path="/administracion/reservas" element={<AdminReservas />} />
+          <Route
+            path="/administracion/historialreservas"
+            element={<HistorialReservas />}
+          />
+          <Route path="/administracion/adminusers" element={<AdminUsers />} />
+          <Route path="/administracion/productos" element={<Productos />} />
 
-        {/* Carta y subrutas */}
-        <Route path="/carta" element={<Carta />}>
-          <Route path="pickeos" element={<Pickeos />} />
-          <Route path="bebidas" element={<Bebidas />} />
-          <Route path="platos" element={<Platos />} />
-        </Route>
+          {/* Carta y subrutas */}
+          <Route path="/carta" element={<Carta />}>
+            <Route path="pickeos" element={<Pickeos />} />
+            <Route path="bebidas" element={<Bebidas />} />
+            <Route path="platos" element={<Platos />} />
+          </Route>
 
-        {/* Redirección por defecto */}
-        <Route path="/*" element={<Navigate to="/" />} />
-      </Routes>
-    </PersistBoxIdOrTableCronosId>
+          {/* Redirección por defecto */}
+          <Route path="/*" element={<Navigate to="/" />} />
+        </Routes>
+      </PersistBoxIdOrTableCronosId>
   );
 };

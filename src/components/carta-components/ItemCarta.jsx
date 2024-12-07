@@ -15,7 +15,10 @@ export const ItemCarta = ({ categoryId, refreshCart }) => {
         const response = await listProductsByCategoryId(categoryId);
         setCategoryData(response.data);
       } catch (error) {
-        console.error("ItemCarta: Error al obtener los productos de la categoría:", error);
+        console.error(
+          "ItemCarta: Error al obtener los productos de la categoría:",
+          error
+        );
       }
     };
 
@@ -37,16 +40,18 @@ export const ItemCarta = ({ categoryId, refreshCart }) => {
       };
 
       await addProductToOrder(orderDetails);
-      refreshCart();
+      await refreshCart(); // Asegúrate de que esto se ejecute tras agregar el producto
     } catch (error) {
-      console.error("", error);
+      console.error("Error al agregar producto al carrito:", error);
     }
   };
 
   return (
     categoryData && (
       <div className="items-cartaPrincipal">
-        <h2 className="container-categoryName">{categoryData.nombreCategory}</h2>
+        <h2 className="container-categoryName">
+          {categoryData.nombreCategory}
+        </h2>
         {categoryData.products.map((product) => (
           <div key={product.productId} className="product-item">
             <div className="item-image-cartaPrincipal">

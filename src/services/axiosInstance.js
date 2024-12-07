@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:8080/api", // Asegúrate de que este sea el URL base correcto para tu API
+  baseURL: "https://shimmering-intuition-production.up.railway.app/api", // Asegúrate de que este sea el URL base correcto para tu API
 });
 
 // Interceptor para agregar el token de autorización en cada solicitud

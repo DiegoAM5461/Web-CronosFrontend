@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { getHistorialOrdersByDateRange } from "../../services/HistorialOrdersService";
+import {
+  getHistorialOrdersByDateRange,
+  exportDetailedOrdersToExcel,
+  exportDailyOrdersToExcel,
+} from "../../services/HistorialOrdersService";
 import "./MainContentHistorialPedidos.css";
 
 export const MainContentHistorialPedidos = () => {
@@ -29,6 +33,22 @@ export const MainContentHistorialPedidos = () => {
     }
   };
 
+  const handleExportDetailed = async () => {
+    try {
+      await exportDetailedOrdersToExcel(startDate, endDate);
+    } catch (error) {
+      setError("Error al exportar órdenes detalladas a Excel.");
+    }
+  };
+
+  const handleExportDaily = async () => {
+    try {
+      await exportDailyOrdersToExcel(startDate, endDate);
+    } catch (error) {
+      setError("Error al exportar análisis diario a Excel.");
+    }
+  };
+
   return (
     <div className="col py-3">
       <div className="box1-header">
@@ -55,6 +75,12 @@ export const MainContentHistorialPedidos = () => {
           </label>
           <button onClick={fetchOrders} disabled={loading}>
             {loading ? "Cargando..." : "Buscar"}
+          </button>
+          <button onClick={handleExportDetailed} disabled={!startDate || !endDate}>
+            Exportar Órdenes Detalladas
+          </button>
+          <button onClick={handleExportDaily} disabled={!startDate || !endDate}>
+            Exportar Análisis Diario
           </button>
         </div>
         {error && <p className="mchistorialp-error">{error}</p>}
